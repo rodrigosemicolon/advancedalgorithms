@@ -1,0 +1,89 @@
+%
+% General structure for the revdetua class:
+%
+\documentclass[...]{revdetua}
+%
+% Valid options are:
+%
+%   longpaper --------- \part and \tableofcontents defined
+%   shortpaper -------- \part and \tableofcontents not defined (default)
+%
+%   english ----------- main language is English (default)
+%   portugues --------- main language is Portuguese
+%
+%   draft ------------- draft version
+%   final ------------- final version (default)
+%
+%   times ------------- use times (postscript) fonts for text
+%
+%   mirror ------------ prints a mirror image of the paper (with dvips)
+%
+%   visiblelabels ----- \SL, \SN, \SP, \EL, \EN, etc. defined
+%   invisiblelabels --- \SL, \SN, \SP, \EL, \EN, etc. not defined (default)
+%
+% Note: the final version should use the times fonts
+% Note: the really final version should also use the mirror option
+%
+
+
+
+
+\begin{document}
+
+\Header{Volume}{19}{Novembro}{2020}{1}
+% Note: the month must be in Portuguese
+
+\title{Exhaustive search application for the max clique problem}
+\author{Rodrigo Ferreira} % or \author{... \and ...}
+\maketitle
+
+\begin{resumo}% Note: in Portuguese
+ Este artigo começa por contextualizar conceitos essenciais ao tema do problema, como o conceito de grafo, nós, arestas, subgrafo e clique. Passa então descrever o problema em questão. Depois de estabelecidas tais bases, explica o conceito de algoritmos de pesquisa de força bruta e em particular, pesquisa exaustiva. As suas características, vantagens, desvantagens, e como se encaixa no problema em questão, assim como uma avaliação dos resultados obtidos.
+\end{resumo}
+
+\begin{abstract}% Note: in English
+  This paper starts out by contextualizing important concepts essential to the understanding of its theme, like graphs, nodes, edges, subgraphs and cliques. Afterwards, the problem at hand is described. When the basic concepts and the problem are explained, we move on to the topic of brute force search, and exhaustive search in particular. Its characteristics, advantages, disadvantages, how it fits into this theme, as well as an evaluation of its results.
+\end{abstract}
+\section{Introduction}
+\subsection{Fundamental concepts}
+We can’t discuss the max clique problem without first establishing some key concepts.
+Graphs are structures composed of 2 sets, a set V, of nodes, and a set E of edges (we are always talking about undirected graphs in this paper).
+Nodes, vertices, or points are the fundamental unit of which graphs are formed, in a graph diagram they are objects usually represented by a circle with a label.
+Edges are pairs of nodes, representing a relation between them, in the case at hand (undirected graphs), (i,j) implies (j,i), this isn’t the case for arcs in directed graphs but we’re not using that structure here. In a graph diagram, edges are usually represented by a line uniting two nodes.
+Subgraph…
+complete subgraph
+Clique
+\subsection{The problem}
+Now that the basic concepts relevant to the problem have been estabilished, we can move on to describing the problem itself.
+The maximum clique of a graph $G$ is a complete subgraph $G'$ such that no other clique in 
+$G$ has cardinality higher than $\#G'$.
+\section{The approach}
+\subsection{Brute force algorithms}
+we are ...
+\subsection{Exhaustive search}
+in specific...
+
+\section{The algorithm}
+brief description
+\subsection{Complexity}
+description with formulas and stuff
+\subsection{Testing for bigger instances}
+\subsubsection{Basic operation count}
+image and value discussion
+\subsubsection{Executing time}
+image and value discussion
+\subsubsection{Solutions and total configurations}
+image and value discussion
+\subsection{Comparing results}
+\subsection{Estimating running time}
+\section{Conclusions}
+
+\begin{keywords}% Note: in English (optional)
+  ...
+\end{keywords}
+
+
+\bibliography{...} % use a field named url or \url{} for URLs
+% Note: the \bibliographystyle is set automatically
+
+\end{document}
