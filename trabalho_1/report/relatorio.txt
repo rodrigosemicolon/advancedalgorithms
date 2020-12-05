@@ -1,0 +1,42 @@
+max clique problem
+problem description:
+Given an undirected graph G, with n vertices and m edges, find the biggest subgraph (cardinality, number of vertices) that constitutes a complete subgraph in G, meaning that there exists an edge between every pair of vertices in said subgraph.
+
+Algorithm:
+given an instance of the problem, how do we find the biggest clique? we are using a brute force, more specifically, an exhaustive search approach, meaning that we are generating all possible solutions, and testing each to obtain the best one/ones.
+first, we notice that the maximum clique for a graph with 1<=n vertices must have a cardinality within 1 and #n, 1 assuming there are no edges, and #n assuming g is a complete graph already, and thus a clique.
+When we become aware of this, we can make a cycle where we generate all combinations (could be permutations but it would be useless because its an undirected graph, i.e. (i,j)=(j,i)) of vertices with size 1 to n.#explain this better
+when we get all these combinations, we go one by one, and test if indeed for every pair of vertices in said combination there exists an edge, if it does indeed constitute a clique, we append it to a structure (dictionary #sofar) containing all solutions, and update another variable, max, to keep track of the size of the best solution so far, otherwise we ignore it.
+once the program has run its course for all combinations of size 1 to n, we will have the best solutions in our structure with index max
+	
+
+
+a) analisar a complexidade do algoritmo
+After explaining the algorithm, it becomes obvious that the complexity is given by the number of times the cycles run, so we get (formula), where the outter sum represents our cycle from 1 to n, and the inner cycle represents our check of every pair of vertices connection
+To further analyze our algorithm's complexity, I added a counter  next to the innermost instruction, so we can see how many times it is executed for different instances of the problem, and it coincides with the results from our previous formula (formula)
+
+
+
+
+b)Realizar uma  sequência  de  testescom  instâncias  sucessivamente  maiores  do  problema.
+Como se trata de um algoritmo de brute force, exhaustive search, era de esperar que não fosse muito realista o seu uso para instâncias, não muito pequenas do problema, e foi de facto o que foi verificado, tanto para o tempo de execução como para o numero de operaçoes basicas efetuadas, os resultados para soluçoes/configuraçoes_totais também se mostrou dentro do esperado para instancias maiores.
+
+grafico operaçoes basicas efetuadas
+como podemos ver, o numero de operaçoes efetuadas aumenta consideravelmente à medida que aumentamos tanto n, como m, mas especialmente n #test this, pois aumenta o numero de ocorrencias do sumatorio exterior (formula)
+
+grafico tempo de execução
+observaçoes
+
+grafico numerosoluçoes/configuraçoestotais
+Como era de esperar, o  valor diminui bastante, à medida que aumentamos a cardinalidade do n, pois com mais vertices, estamos muitas mais combinações para testar, como muitas destas são "lixo", o número de soluções dividido por este numero de configurações dá cada vez um valor mais pequeno
+
+
+c)comparar resultados de b) com a)
+
+
+
+d)estimar tempo de execução para instancias de muito maior dimensao
+
+
+
+e)rel
