@@ -18,7 +18,7 @@ def rec_maxclique(n_vertices:list,m_edges:list) -> list:
                 return max(values,key=len)
     return n_vertices            
 
-def random_graph(n,e):
+def random_graph(n: int,e: int)->tuple:
     #assert number of edges not over max possible
     nodes = range(1,n+1)
     edges=[]
@@ -33,7 +33,7 @@ def random_graph(n,e):
             edges.append((i,j))
     return n,edges
 
-def compcalc(n):
+def compcalc(n: int)-> int:
     total=0
     for i in range(2,n+1):
         c =(math.factorial(n)/(math.factorial(n-i)*math.factorial(i)))
@@ -68,7 +68,7 @@ def max_clique(n_vertices: int,m_edges: list)->list:
     return sols[max],n_innermost_inst,n_configurations,end-start
 
 
-def basic_op_increasing_n(beg,end):
+def basic_op_increasing_n(beg: int,end: int)->None:
     x=[]
     basic_operations=[]
     for n in range(beg,end+1):
@@ -84,7 +84,7 @@ def basic_op_increasing_n(beg,end):
     plt.ylabel("# basic operations")
     plt.show()
     
-def exec_time_increasing_n(beg,end):
+def exec_time_increasing_n(beg: int,end: int)->None:
     x=[]
     times=[]
     for n in range(beg,end+1):
@@ -100,7 +100,7 @@ def exec_time_increasing_n(beg,end):
     plt.ylabel("time (s)")
     plt.show()
 
-def sol_config_ratio_increasing_n(beg,end):
+def sol_config_ratio_increasing_n(beg: int,end: int)->None:
     x=[]
     sol_config_ratio=[]
     for n in range(beg,end+1):
@@ -116,7 +116,7 @@ def sol_config_ratio_increasing_n(beg,end):
     plt.ylabel("%")
     plt.show()
 
-def increasing_m(n,beg,end):
+def increasing_m(n: int,beg: int,end: int)->None:
     print(compcalc(n))
     for m in range(beg,end+1):
         graph=random_graph(n,m)
@@ -125,7 +125,7 @@ def increasing_m(n,beg,end):
         print(results)
         print()
 
-#basic_op_increasing_n(1,20)
+basic_op_increasing_n(1,20)
 #exec_time_increasing_n(1,20)
-sol_config_ratio_increasing_n(1,20)
+#sol_config_ratio_increasing_n(1,20)
 #increasing_m(5,0,10)

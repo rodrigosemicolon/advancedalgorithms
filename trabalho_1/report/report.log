@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.6)  5 DEC 2020 15:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.6)  5 DEC 2020 18:29
 entering extended mode
 **./report.tex
 (report.tex
@@ -60,6 +60,31 @@ Package: cite 2015/02/27  v 5.5
 \belowcaptionskip=\skip48
 \bibindent=\dimen140
 )
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+)
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
@@ -70,63 +95,140 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [...].
 
-No file report.aux.
+(report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count183
+\scratchdimen=\dimen143
+\scratchbox=\box48
+\nofMPsegments=\count184
+\nofMParguments=\count185
+\everyMPshowfont=\toks16
+\MPscratchCnt=\count186
+\MPscratchDim=\dimen144
+\MPnumerator=\count187
+\makeMPintoPDFobject=\count188
+\everyMPtoPDFconversion=\toks17
+)
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+)
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 38.
+(Font)              <7> on input line 40.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 38.
+(Font)              <5> on input line 40.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 38.
+(Font)              <12> on input line 40.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 38.
+(Font)              <8> on input line 40.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 38.
+(Font)              <6> on input line 40.
+
+Underfull \vbox (badness 4819) has occurred while \output is active []
+
+ [1{C:/Users/rodri/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
+
+
+]
+<basic_ops.png, id=17, 462.528pt x 344.0052pt>
+File: basic_ops.png Graphic file (type png)
+<use basic_ops.png>
+Package pdftex.def Info: basic_ops.png  used on input line 86.
+(pdftex.def)             Requested size: 231.26343pt x 172.00217pt.
+<exe_time.png, id=19, 462.528pt x 344.0052pt>
+File: exe_time.png Graphic file (type png)
+<use exe_time.png>
+Package pdftex.def Info: exe_time.png  used on input line 89.
+(pdftex.def)             Requested size: 231.26343pt x 172.00217pt.
+
+Underfull \hbox (badness 1946) in paragraph at lines 88--90
+[]\OT1/cmr/m/n/10 As a con-se-quence of the num-ber of op-er-a-tions
+ []
+
+
+Underfull \hbox (badness 3849) in paragraph at lines 88--90
+\OT1/cmr/m/n/10 in-creas-ing by such a fac-tor as $\OML/cmm/m/it/10 N$ \OT1/cmr
+/m/n/10 grows, the
+ []
+
+
+Underfull \hbox (badness 3646) in paragraph at lines 88--90
+\OT1/cmr/m/n/10 ex-e-cut-ing time will in-crease very fast as well.
+ []
+
+<solconfig.png, id=20, 462.528pt x 344.0052pt>
+File: solconfig.png Graphic file (type png)
+<use solconfig.png>
+Package pdftex.def Info: solconfig.png  used on input line 92.
+(pdftex.def)             Requested size: 231.26343pt x 172.00217pt.
+
+Underfull \hbox (badness 5741) in paragraph at lines 91--93
+[]\OT1/cmr/m/n/10 On our for-mula it's clear the sheer amount
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
+\OT1/cmr/m/n/10 of con-fig-u-ra-tions gen-er-ated for each $\OML/cmm/m/it/10 N$
+\OT1/cmr/m/n/10 ...
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 No file report.bbl.
-[1{C:/Users/rodri/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
-
-
-] (report.aux) ) 
+[2 <./basic_ops.png> <./exe_time.png> <./solconfig.png>] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 1389 strings out of 479799
- 21374 string characters out of 2869723
- 312387 words of memory out of 3000000
- 18424 multiletter control sequences out of 15000+200000
+ 2186 strings out of 479799
+ 32612 string characters out of 2869723
+ 330251 words of memory out of 3000000
+ 19184 multiletter control sequences out of 15000+200000
  540042 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,7n,73p,492b,228s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmbx12.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmbx9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/rodri/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/rodri/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/rodri/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/User
-s/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+ 66i,7n,73p,507b,230s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/User
+s/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mbx9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmbxti10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmcsc10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/rodri/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/rodri/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/rodri/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/rodri
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Use
+rs/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb>
 <C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-r6.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+r7.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmr8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmsy6.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmsy7.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on report.pdf (1 page, 141836 bytes).
+amsfonts/cm/cmsy10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmsy6.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/rodri/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on report.pdf (2 pages, 237889 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
+ 80 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
