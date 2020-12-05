@@ -1,63 +1,8 @@
 import math
-from itertools import combinations,permutations
+from itertools import combinations
 import time
 import random
 import matplotlib.pyplot as plt
-
-n_comparisons=0
-n_configurations=0
-n_rec_calls=0
-
-
-def iter_maxclique(n_vertices_list:list,m_edges:list)->list:
-    global n_comparisons,n_configurations
-    n_vertices=len(n_vertices_list)
-    max =0
-    sols = {}
-    for i in range(1,n_vertices+1):
-        comb = combinations(range(1,n_vertices+1),i)
-        #comb = permutations(range(1,n_vertices+1),i)
-        sols[i]=[]
-        for c in comb:
-            n_configurations+=1
-            flag=True
-            c=list(c)
-            for a in range(len(c)):
-                
-                for j in range(1,len(c)-a):
-                    n_comparisons+=1
-                    if  not ((c[a],c[a+j]) in m_edges or (c[a+j],c[a]) in m_edges): #flag and
-                        flag=False
-                
-            if flag and len(c)>=max:
-                max=len(c)
-                sols[i].append(c)
-    return sols[max]
-
-def final_maxclique(n_vertices: int,m_edges: list)->list:
-    global n_configurations, n_comparisons
-    max = 0
-    sols = {}
-    for i in range(1,n_vertices+1):
-        comb = list(combinations(range(1,n_vertices+1),i))
-        sols[i]=[]
-        for c in comb:
-            c=list(c)
-            n_configurations+=1
-            flag=True
-            for a in range(len(c)):
-                
-                for j in range(1,len(c)-a):
-                    n_comparisons+=1
-                    if  not ((c[a],c[a+j]) in m_edges or (c[a+j],c[a]) in m_edges): #flag and
-                        flag=False
-            
-            if flag and len(c)>=max:
-                max=len(c)
-                sols[i].append(c)
-
-    return sols[max]
-
 
 def rec_maxclique(n_vertices:list,m_edges:list) -> list:
     global n_rec_calls
@@ -88,9 +33,6 @@ def random_graph(n,e):
             edges.append((i,j))
     return n,edges
 
-#edg=[(1,2),(1,5),(2,4),(2,6),(3,4),(3,6),(4,5),(4,6),(5,6)]
-edgtest=[(1,2),(1,3),(1,7),(2,3),(2,7),(3,4),(3,5),(3,6),(4,5),(4,6),(5,6),(6,7)]
-#print(final_maxclique(7,edgtest))
 def compcalc(n):
     total=0
     for i in range(2,n+1):
@@ -100,6 +42,7 @@ def compcalc(n):
 
 
 def max_clique(n_vertices: int,m_edges: list)->list:
+    start=time.time()
     n_configurations=0
     n_innermost_inst=0
     max = 0
@@ -121,57 +64,68 @@ def max_clique(n_vertices: int,m_edges: list)->list:
             if flag and len(c)>=max:
                 max=len(c)
                 sols[i].append(c)
-                
-    return sols[max],n_innermost_inst,n_configurations
+    end = time.time()
+    return sols[max],n_innermost_inst,n_configurations,end-start
 
 
-def increasing_n(beg,end):
+def basic_op_increasing_n(beg,end):
+    x=[]
+    basic_operations=[]
     for n in range(beg,end+1):
-        graph = random_graph(n,2)
-        results = maxclique(*graph)
-        print(results)
+        graph=(n,[])
+        results = list(max_clique(*graph))
+        x.append(n)
+        basic_operations.append(results[1])
+
+    plt.plot(x,basic_operations)
+    plt.xticks(x)
+    plt.title("Number of basic operations for input size n")
+    plt.xlabel("n")
+    plt.ylabel("# basic operations")
+    plt.show()
+    
+def exec_time_increasing_n(beg,end):
+    x=[]
+    times=[]
+    for n in range(beg,end+1):
+        graph=(n,[])
+        results = list(max_clique(*graph))
+        x.append(n)
+        times.append(results[3])
+
+    plt.plot(x,times)
+    plt.title("Execution time for input size n")
+    plt.xlabel("n")
+    plt.xticks(x)
+    plt.ylabel("time (s)")
+    plt.show()
+
+def sol_config_ratio_increasing_n(beg,end):
+    x=[]
+    sol_config_ratio=[]
+    for n in range(beg,end+1):
+        graph=(n,[])
+        results = list(max_clique(*graph))
+        x.append(n)
+        sol_config_ratio.append(len(results[0])/results[2])
+
+    plt.plot(x,sol_config_ratio)
+    plt.title("Solutions/Configurations for input size n")
+    plt.xlabel("n")
+    plt.xticks(x)
+    plt.ylabel("%")
+    plt.show()
 
 def increasing_m(n,beg,end):
     print(compcalc(n))
     for m in range(beg,end+1):
         graph=random_graph(n,m)
-        results = maxclique(*graph)
+        results = max_clique(*graph)
         print(graph)
         print(results)
         print()
-"""
-for i in range(1,10):
-    n_comparisons=0
-    n_configurations=0
-    vert=[1,2,3,4,5,6]
-    edg=[(1,2),(1,5),(2,4),(2,6),(3,4),(3,6),(4,5),(4,6),(5,6)]
-    edg2=list(combinations(range(1,6),2))
-    #n = int(input("n_vertices:\n"))
-    #print("iterative")
-    start=time.time()
-    #x =iter_maxclique(vert,edg)
-    x =final_maxclique(i,edgtest)
-    end=time.time()
-    print(x)  
-    print(end-start, "seconds")
-    print("vertices:",i,"\nedges:",len(edgtest))
-    print("iterative comparisons:",n_comparisons)
-    print("iterative configurations:",n_configurations)
-    print(len(x)/n_configurations,"solutions/configurations")
-    print("formula",compcalc(i))
-"""
-"""
-print("\n\nrecursive")
-start=time.time()
-print(rec_maxclique(vert,edg))
-print(time.time()-start,"seconds")
-print(n_rec_calls, "recursive calls")
-"""
 
-"""
-graph=random_graph(6,10)
-print(graph)
-print(maxclique(*graph))
-"""
-#increasing_n(3,15)
-increasing_m(5,0,10)
+#basic_op_increasing_n(1,20)
+#exec_time_increasing_n(1,20)
+sol_config_ratio_increasing_n(1,20)
+#increasing_m(5,0,10)
