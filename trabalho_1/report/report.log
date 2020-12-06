@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.6)  6 DEC 2020 16:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.6)  6 DEC 2020 19:42
 entering extended mode
 **./report.tex
 (report.tex
@@ -186,11 +186,11 @@ No file report.bbl.
 
 ] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 2186 strings out of 479799
- 32604 string characters out of 2869723
+ 2188 strings out of 479799
+ 32625 string characters out of 2869723
  330251 words of memory out of 3000000
- 19184 multiletter control sequences out of 15000+200000
- 540042 words of font info for 45 fonts, out of 3000000 for 9000
+ 19185 multiletter control sequences out of 15000+200000
+ 540210 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,7n,73p,541b,230s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/publi
@@ -210,10 +210,12 @@ nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/rodri/AppData/Local/Programs/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/rodri/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/rodri/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/rodri/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on report.pdf (3 pages, 243380 bytes).
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Use
+rs/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pf
+b>
+Output written on report.pdf (3 pages, 253156 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
+ 87 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
