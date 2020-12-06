@@ -88,6 +88,7 @@ Due to the fact that the program's complexity is solely based on the size of the
 Another consequence of applying exhaustive search is that the worst, average and best case are all the same for every instance of the problem as it checks every possibility regardless. \par
 The complexity is given by the following formula, which is quite intuitive once the algorithm has been analysed, basically we generate all combinations of size $1$ to $\#N$ and check every pair of vertices in all combinations, thus: 
 $$\sum_{i=1}^{n}{{n}\choose{i}}{{i}\choose{2}}=2^{(n-3)}(n-1)n$$
+This means that our algorithm is in $O(2^{(n-3)}(n-1)n)$, making it an exponential algorithm. 
 \subsection{Testing for bigger instances}
 \subsubsection{Basic operation count}
 As we are working with an algorithm with complexity $2^{(n-3)}(n-1)n$, the amount of basic operations (an instruction in the innermost loop) executed grows explosively as $\#N$ increases.\par This can be observed in the following image.

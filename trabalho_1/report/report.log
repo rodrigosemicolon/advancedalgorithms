@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.6)  6 DEC 2020 21:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.6)  6 DEC 2020 22:22
 entering extended mode
 **./report.tex
 (report.tex
@@ -159,31 +159,31 @@ Package pdftex.def Info: max_clique_example.png  used on input line 63.
 <basic_ops.png, id=19, 462.528pt x 344.0052pt>
 File: basic_ops.png Graphic file (type png)
 <use basic_ops.png>
-Package pdftex.def Info: basic_ops.png  used on input line 94.
+Package pdftex.def Info: basic_ops.png  used on input line 95.
 (pdftex.def)             Requested size: 231.26343pt x 172.00217pt.
 
-Underfull \hbox (badness 3271) in paragraph at lines 93--95
+Underfull \hbox (badness 3271) in paragraph at lines 94--96
 []\OT1/cmr/m/n/10 This can be ob-served in the fol-low-ing im-age.
  []
 
 <exe_time.png, id=21, 462.528pt x 344.0052pt>
 File: exe_time.png Graphic file (type png)
 <use exe_time.png>
-Package pdftex.def Info: exe_time.png  used on input line 98.
+Package pdftex.def Info: exe_time.png  used on input line 99.
 (pdftex.def)             Requested size: 231.26343pt x 172.00217pt.
 <solconfig.png, id=22, 462.528pt x 344.0052pt>
 File: solconfig.png Graphic file (type png)
 <use solconfig.png>
-Package pdftex.def Info: solconfig.png  used on input line 101.
+Package pdftex.def Info: solconfig.png  used on input line 102.
 (pdftex.def)             Requested size: 231.26343pt x 172.00217pt.
 
-Underfull \hbox (badness 1286) in paragraph at lines 100--102
+Underfull \hbox (badness 1286) in paragraph at lines 101--103
 \OT1/cmr/m/n/10 of con-fig-u-ra-tions gen-er-ated for each $#\OML/cmm/m/it/10 N
 $ \OT1/cmr/m/n/10 is very
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4846) has occurred while \output is active []
 
  [2 <./basic_ops.png> <./exe_time.png>] (report.bbl) [3 <./solconfig.png>] (rep
 ort.aux) ) 
@@ -217,7 +217,7 @@ i/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/U
 sers/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.p
 fb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmtt8.pfb>
-Output written on report.pdf (3 pages, 288681 bytes).
+Output written on report.pdf (3 pages, 288935 bytes).
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
