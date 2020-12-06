@@ -35,12 +35,12 @@
 \Header{1}{1}{Dezembro}{2020}{1}
 % Note: the month must be in Portuguese
 
-\title{Exhaustive search application for the max clique problem}
+\title{Exhaustive search application for the maximum clique problem}
 \author{Rodrigo Ferreira} % or \author{... \and ...}
 \maketitle
 
 \begin{resumo}% Note: in Portuguese
-	Este artigo começa por contextualizar conceitos essenciais ao tema do problema, como o conceito de grafo, nós, arestas, subgrafo e subgrafo completo. Passa então descrever o problema em questão. Depois de estabelecidas tais bases, explica o conceito de algoritmos de força bruta e em particular, pesquisa exaustiva. As suas características, vantagens, desvantagens, e como se encaixa no problema em questão, assim como uma avaliação dos resultados obtidos para o problema de clique máximo.
+	Este artigo começa por contextualizar conceitos essenciais ao tema do problema, como o conceito de grafo, nós, arestas, sub-grafo e sub-grafo completo. Passa então descrever o problema em questão. Depois de estabelecidas tais bases, explica o conceito de algoritmos de força bruta e em particular, pesquisa exaustiva. As suas características, vantagens, desvantagens, e como se encaixa no problema em questão, assim como uma avaliação dos resultados obtidos para o problema de clique máximo.
 \end{resumo}
 
 \begin{abstract}% Note: in English
@@ -50,24 +50,24 @@
 \subsection{Fundamental concepts}
 We can’t discuss the max clique problem without first establishing some key concepts regarding graphs.
 \begin{itemize}
-\item Graphs are structures composed of 2 sets, a set V, of nodes, and a set E of edges (we are always talking about undirected graphs in this paper).
-\item Nodes, vertices, or points are the fundamental unit of which graphs are formed, in a graph diagram they are objects usually represented by a circle with a label.
-\item Edges are the other basic unit of which graphs are made of. Each edge has two vertices as endpoints, edges can be directed or undirected, but in the case at hand, they are always undirected which means $(i,j)$ implies $(j,i)$ and vice versa, as opposed to directed edges (arcs) where we may have only $(i,j)$ or $(j,i)$ . In a graph diagram, edges are usually represented by a line uniting two nodes.
-\item A subgraph is a graph formed from a subset of nodes and edges of another graph.
-\item A complete subgraph is a subgraph that has an edge connecting every pair of vertices.
+\item Graphs are structures composed of 2 sets, a set V, of nodes, and a set E of edges (we are always talking about undirected graphs in this paper) \cite{graph}.
+\item Nodes, vertices, or points are the fundamental unit of which graphs are formed, in a graph diagram they are objects usually represented by a circle with a label  \cite{graph}.
+\item Edges are the other basic unit of which graphs are made of. Each edge has two vertices as endpoints, edges can be directed or undirected, but in the case at hand, they are always undirected which means $(i,j)$ implies $(j,i)$ and vice versa, as opposed to directed edges (arcs) where we may have only $(i,j)$ or $(j,i)$ . In a graph diagram, edges are usually represented by a line uniting two nodes  \cite{graph}.
+\item A subgraph is a graph formed from a subset of nodes and edges of another graph\cite{subgraph}.
+\item A complete graph/subgraph is a subgraph that has an edge connecting every pair of its  vertices\cite{completegraph}.
 \end{itemize}
 \subsection{The problem}
 Now that the basic concepts relevant to the problem have been estabilished, we can move on to describing the problem itself.\par
 The maximum clique of a graph $G$ is a complete subgraph $G'$ such that no other complete subgraph in $G$ has cardinality higher than $\#G'$.\par
-It's a simple description to a difficult problem, the task of finding whether there is a clique of a given size in a graph (the clique problem) is NP-complete [wiki], meaning it's in the NP class (solved by a non-deterministic Turing machine in polynomial time) and also that every problem in NP can be reduced to the clique problem in polynomial time.\par 
-And thus, if an algorithm is found to solve the clique problem in polynomial time with a deterministic Turing machine, all problems in NP are suddenly also solved[other wiki]. 
+It's a simple description to a difficult problem, the task of finding whether there is a clique of a given size in a graph (the clique problem) is NP-complete \cite{wikiclique}, meaning it's in the NP class (solved by a non-deterministic Turing machine in polynomial time) and also that every problem in NP can be reduced to the clique problem in polynomial time.\par 
+And thus, if an algorithm is found to solve the clique problem in polynomial time with a deterministic Turing machine, all problems in NP are suddenly also solved \cite{wikinp}. 
 \section{The approach}
 \subsection{Brute force algorithms}
 Brute force algorithms use a straightforward approach to solving problems taking advantage of a machine's computing power, over that of a human being.\par
-It is usually directly based on the problem statement and definitions of the concepts involved [livro stor ou slides]. 
+It is usually directly based on the problem statement and definitions of the concepts involved \cite{brute}. 
 \subsection{Exhaustive search}
 Exhaustive search is a brute force approach to combinatorial problems.
-It generates all candidate answers, and then checks each of them to confirm their validity, returning the best.\par
+It generates all candidate answers, and then checks each of them to confirm their validity, returning the best \cite{exh}.\par
 This approach, simple and effective, always returning a solution if there is one, can tackle most problems we can think of while usually requiring a very simple implementation, but there's a caveat, it's extremely inefficient due to its blind "try everything" approach.\par And thus, it's only advised for very small instances of the problems it can solve, due to its difficulties for bigger instances, as the number of possible candidates grows because of the combinatorial nature of the problems it tackles.
 
 \section{The algorithm}
@@ -88,7 +88,7 @@ $$\sum_{i=1}^{n}{{n}\choose{i}}{{i}\choose{2}}=2^{(n-3)}(n-1)n$$
 \subsubsection{Basic operation count}
 As we are working with an algorithm with complexity $2^{(n-3)}(n-1)n$, the amount of basic operations (an instruction in the innermost loop) executed grows explosively as $\#N$ increases.\par This can be observed in the following image.
 \includegraphics[scale=0.5]{basic_ops.png}
-\subsubsection{Executing time}
+\subsubsection{Execution time}
 As a consequence of the number of basic operations growing by such a factor as we increase $\#N$, the executing time will also grow very fast as well, as is demonstrated in the following graphic.
 
 \includegraphics[scale=0.5]{exe_time.png}
@@ -103,9 +103,15 @@ With our previous results we can pick an $\#N$, get its number of basic operatio
 
 \section{Conclusions}
 This example was effective at showing the pros and cons of exhaustive search algorithms, we managed to make a very simple program, that works very well for smaller instances of our problem, but scales very poorly, leaving us to wait for an answer, which might take an unimaginable amount of time and huge computational resources to achieve.
-\section{References}
-\bibliography{} % use a field named url or \url{} for URLs
-% Note: the \bibliographystyle is set automatically
-\url{www.google.pt}
+%\section{References}
 
+
+%[1]\url{https://en.wikipedia.org/wiki/Clique_(graph_theory)}
+%[2]\url{https://en.wikipedia.org/wiki/NP-completeness}\par
+%\
+%[3]	A. Levitin, Introduction to the Design and Analysis of Algorithms, 3rd Ed., Pearson, Chapter 3,pp.97-98, 2012\par
+%\
+%[4]	A. Levitin, Introduction to the Design and Analysis of Algorithms, 3rd Ed., Pearson, Chapter 3,pp.115, 2012
+
+\bibliography{bibliografia}
 \end{document}

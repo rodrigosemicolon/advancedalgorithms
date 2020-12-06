@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}
+
+\bibitem{graph}
+``Graph''.
+\newline\textbf{URL:} \url{https://en.wikipedia.org/wiki/Graph_theory#Graph}
+
+\bibitem{subgraph}
+``Subgraph''.
+\newline\textbf{URL:}
+  \url{https://en.wikipedia.org/wiki/Glossary_of_graph_theory_terms#subgraph}
+
+\bibitem{completegraph}
+``complete graph''.
+\newline\textbf{URL:} \url{https://en.wikipedia.org/wiki/Complete_graph}
+
+\bibitem{wikiclique}
+``Clique (graph theory)''.
+\newline\textbf{URL:} \url{https://en.wikipedia.org/wiki/Clique_(graph_theory)}
+
+\bibitem{wikinp}
+``Np-completeness''.
+\newline\textbf{URL:} \url{https://en.wikipedia.org/wiki/NP-completeness}
+
+\bibitem{brute}
+{\em Introduction to the Design and Analysis of Algorithms}, chapter~3, pp.
+  97--98,
+\newblock Pearson, 3rd edition, 2012.
+
+\bibitem{exh}
+{\em Introduction to the Design and Analysis of Algorithms}, chapter~3, p. 115,
+\newblock Pearson, 3rd edition, 2012.
+
+\end{thebibliography}
