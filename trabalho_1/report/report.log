@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.6)  6 DEC 2020 21:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.6)  6 DEC 2020 21:57
 entering extended mode
 **./report.tex
 (report.tex
@@ -147,76 +147,79 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 Underfull \vbox (badness 4024) has occurred while \output is active []
 
+<max_clique_example.png, id=1, 245.41687pt x 150.5625pt>
+File: max_clique_example.png Graphic file (type png)
+<use max_clique_example.png>
+Package pdftex.def Info: max_clique_example.png  used on input line 63.
+(pdftex.def)             Requested size: 196.33376pt x 120.45015pt.
  [1{C:/Users/rodri/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
 
 
-]
-<basic_ops.png, id=18, 462.528pt x 344.0052pt>
+ <./max_clique_example.png>]
+<basic_ops.png, id=19, 462.528pt x 344.0052pt>
 File: basic_ops.png Graphic file (type png)
 <use basic_ops.png>
-Package pdftex.def Info: basic_ops.png  used on input line 90.
+Package pdftex.def Info: basic_ops.png  used on input line 94.
 (pdftex.def)             Requested size: 231.26343pt x 172.00217pt.
 
-Underfull \hbox (badness 3271) in paragraph at lines 89--91
+Underfull \hbox (badness 3271) in paragraph at lines 93--95
 []\OT1/cmr/m/n/10 This can be ob-served in the fol-low-ing im-age.
  []
 
-
-Underfull \vbox (badness 2285) has occurred while \output is active []
-
-<exe_time.png, id=20, 462.528pt x 344.0052pt>
+<exe_time.png, id=21, 462.528pt x 344.0052pt>
 File: exe_time.png Graphic file (type png)
 <use exe_time.png>
-Package pdftex.def Info: exe_time.png  used on input line 94.
+Package pdftex.def Info: exe_time.png  used on input line 98.
 (pdftex.def)             Requested size: 231.26343pt x 172.00217pt.
-<solconfig.png, id=21, 462.528pt x 344.0052pt>
+<solconfig.png, id=22, 462.528pt x 344.0052pt>
 File: solconfig.png Graphic file (type png)
 <use solconfig.png>
-Package pdftex.def Info: solconfig.png  used on input line 97.
+Package pdftex.def Info: solconfig.png  used on input line 101.
 (pdftex.def)             Requested size: 231.26343pt x 172.00217pt.
 
-Underfull \hbox (badness 1286) in paragraph at lines 96--98
+Underfull \hbox (badness 1286) in paragraph at lines 100--102
 \OT1/cmr/m/n/10 of con-fig-u-ra-tions gen-er-ated for each $#\OML/cmm/m/it/10 N
 $ \OT1/cmr/m/n/10 is very
  []
 
-[2 <./basic_ops.png> <./exe_time.png> <./solconfig.png>] (report.bbl) [3
 
-]
-(report.aux) ) 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2 <./basic_ops.png> <./exe_time.png>] (report.bbl) [3 <./solconfig.png>] (rep
+ort.aux) ) 
 Here is how much of TeX's memory you used:
- 2205 strings out of 479799
- 32860 string characters out of 2869723
- 330272 words of memory out of 3000000
- 19198 multiletter control sequences out of 15000+200000
+ 2213 strings out of 479799
+ 33069 string characters out of 2869723
+ 329282 words of memory out of 3000000
+ 19206 multiletter control sequences out of 15000+200000
  540871 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,7n,73p,541b,327s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmbx8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/rodri/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/rodri/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/rodri/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/
-rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmm
-i7.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmr10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmr12.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmr6.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/rodri/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/rodri/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/rodri/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/rodri/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/
-rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><
-C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmt
-i8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmtt8.pfb>
-Output written on report.pdf (3 pages, 279185 bytes).
+<C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmbx12.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmbx8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/rodri/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/rodri/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/rodr
+i/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/U
+sers/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.p
+fb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmr10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmr12.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmr6.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/rodri/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/rodri/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/rodri/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/rodr
+i/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/U
+sers/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.p
+fb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmtt8.pfb>
+Output written on report.pdf (3 pages, 288681 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
+ 96 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

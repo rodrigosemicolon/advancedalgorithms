@@ -58,7 +58,11 @@ We can’t discuss the max clique problem without first establishing some key co
 \end{itemize}
 \subsection{The problem}
 Now that the basic concepts relevant to the problem have been estabilished, we can move on to describing the problem itself.\par
-The maximum clique of a graph $G$ is a complete subgraph $G'$ such that no other complete subgraph in $G$ has cardinality higher than $\#G'$.\par
+The maximum clique of a graph $G$ is a complete subgraph $G'$ such that no other complete subgraph in $G$ has cardinality higher than $\#G'$, as demonstrated in the following image, where the subgraph containing the vertices ${\{2,3,4,6\}}$ represents the max clique.\par
+\begin{center}
+\includegraphics[scale=0.8]{max_clique_example}
+\end{center}
+\label{Example of a max clique of a graph}
 It's a simple description to a difficult problem, the task of finding whether there is a clique of a given size in a graph (the clique problem) is NP-complete \cite{wikiclique}, meaning it's in the NP class (solved by a non-deterministic Turing machine in polynomial time) and also that every problem in NP can be reduced to the clique problem in polynomial time.\par 
 And thus, if an algorithm is found to solve the clique problem in polynomial time with a deterministic Turing machine, all problems in NP are suddenly also solved \cite{wikinp}. 
 \section{The approach}
