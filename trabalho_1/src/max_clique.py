@@ -230,12 +230,27 @@ def rec_maxclique(n_vertices:list,m_edges:list) -> list:
                 return max(values,key=len)
     return n_vertices            
 
-
-#g=graph(3,[(1,2),(2,3)])
-#g = random_graph(10,45)
-print(g)
-#print(max_clique(g))
-#increasing_m(10,1,20)
-#basic_op_increasing_n(1,20)
-#exec_time_increasing_n(1,20)
-#sol_config_ratio_increasing_n(1,15,5)
+"""
+##graph creation
+##example of user defined graph
+g1=graph(3,[(1,2),(2,3)])
+##example of randomly generated graph
+g2 = random_graph(10,45)
+##printing the graph
+print(g1)
+print(g2)
+##getting solution to max clique problem
+sol=max_clique(g2)
+##printing solution
+print(sol)
+"""
+"""
+##checking for impact of the number of edges on basic operations
+increasing_m(10,1,20)
+##example of plotting the impact of #n's growth on amount of basic operations
+basic_op_increasing_n(1,20)
+##example of plotting the impact of #n's growth on running time
+exec_time_increasing_n(1,20)
+##example of plotting the impact of #n's growth on the ratio of solutions/configs
+sol_config_ratio_increasing_n(1,15,5)
+"""
