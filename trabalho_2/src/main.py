@@ -4,7 +4,10 @@ import sys
 from tabulate import tabulate
 
 class char_chain:
-
+    """
+    Class that represents the test chains of characters. 
+    Contains attributes such as the source string, size, the generated chain and exact counters.
+    """
     def __init__(self,source_string,chain_size):
         self.source_string=source_string
         self.chain_size=chain_size
@@ -21,7 +24,10 @@ class char_chain:
         return self.chain
 
 class prob_counter:
-
+    """
+    Class that represents a probabilistic counter's (with fixed chance) application on a certain test chain.
+    Contains attributes such as the test chain, the chance, the calculated occurrences, expected occurrences, errors, etc. 
+    """
     def __init__(self, char_chain, p):    
         self.char_chain = char_chain
         self.p=p
@@ -83,12 +89,15 @@ class prob_counter:
         return rel_error
 
     def __str__(self):
-        text = "Fixed probabilistic counter with chance: " + str(self.p) + "%\n" +self.table + "\nMax Relative Error: " + str(self.max_relative_error[1]) + "\nMean Relative Error: " + str(self.mean_relative_error) + "\nMin Relative Error: " + str(self.min_relative_error[1]) + "\n"
+        text = "Fixed probabilistic counter with chance: " + str(self.p*100) + "%\n" +self.table + "\nMax Relative Error: " + str(self.max_relative_error[1]) + "\nMean Relative Error: " + str(self.mean_relative_error) + "\nMin Relative Error: " + str(self.min_relative_error[1]) + "\n"
         return text
 
 
 class dec_prob_counter:
-
+    """
+    Class that represents a logarithmic probabilistic counter's (with decreasing chance) application on a certain test chain.
+    Contains attributes such as the test chain, the base, the calculated occurrences, expected occurrences, errors, etc. 
+    """
     def __init__(self, char_chain,base):    
         self.char_chain = char_chain
         self.base=base
@@ -173,7 +182,7 @@ class dec_prob_counter:
 if __name__ == "__main__":
 
 
-    test_chain = char_chain("rodrigomiguelmaiaferreira",100)
+    test_chain = char_chain("rodrigomiguelmaiaferreira",10000)
     fpc=prob_counter(test_chain,0.5)
     dpc=dec_prob_counter(test_chain,math.sqrt(2))
     print(fpc)
