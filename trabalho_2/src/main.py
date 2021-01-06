@@ -1,10 +1,18 @@
 import random
-import math
+from math import sqrt,pow,ceil,log
 import sys
 from tabulate import tabulate
+import matplotlib.pyplot as plt
 
+#Global variables
 FPC=0
 LDPC=1
+EXACT=3
+DEFAULT_TEST_CHAIN_STRING="rodrigomiguelmaiaferreirarrrrrrrrrroooooo"
+DEFAULT_FPC_P=0.5
+DEFAULT_LDPC_BASE=2**(1/2)
+DEFAULT_N_SIMULATIONS=20
+DEFAULT_SIMULATION_STRING_SIZES=[100,500,1000,5000,10000,50000,100000,500000,1000000]
 
 class char_chain:
     """
@@ -41,7 +49,7 @@ class char_chain:
 
 class prob_counter:
     """
-    Class that represents a probabilistic counter's (with fixed chance) application on a certain test chain.
+    Class that represents a fixed chance probabilistic counter's application on a certain test chain.
     Contains attributes such as the test chain, the chance, the calculated occurrences, expected occurrences, errors, etc. 
     """
     def __init__(self, char_chain, p):    
@@ -63,15 +71,6 @@ class prob_counter:
             tableArray.append(row)
             n+=1
         self.table = tabulate(tableArray,headers=tableHeader)
-        #sortedAbsErrors = sorted(self.absolute_errors.items(), key=lambda x: x[1], reverse=True)
-        #self.max_absolute_error = sortedAbsErrors[0]
-        #self.min_absolute_error = sortedAbsErrors[-1]
-        #self.mean_absolute_error = sum(self.absolute_errors.values())/len(self.absolute_errors)
-        #sortedRelErrors = sorted(self.relative_errors.items(), key=lambda x: x[1], reverse=True)
-        #self.max_relative_error = sortedRelErrors[0]
-        #self.min_relative_error = sortedRelErrors[-1]
-        #self.mean_relative_error = sum(self.relative_errors.values())/len(self.relative_errors)
-        #self.mean_accuracy_ratio = sum(self.accuracy_ratios.values())/len(self.accuracy_ratios)
         
      
     def  count(self):
@@ -120,20 +119,19 @@ class prob_counter:
 
 
     def __str__(self):
-        text = "Fixed probabilistic counter with chance: " + str(self.p*100) + "%\n" +self.table # + "\nMax Absolute Error: " + str(self.max_absolute_error[1]) + "\nMean Absolute Error: " + str(self.mean_absolute_error) + "\nMin Absolute Error: " + str(self.min_absolute_error[1]) +"\nMax Relative Error: " + str(self.max_relative_error[1]*100) + "%\nMean Relative Error: " + str(self.mean_relative_error*100) +"%\nMin Relative Error: " + str(self.min_relative_error[1]*100) + "%\nMean Accuracy Ratio: " + str(self.mean_accuracy_ratio*100) + "%\n" 
+        text = "Fixed probabilistic counter with chance: " + str(self.p*100) + "%\n" +self.table 
         return text
 
 
 class dec_prob_counter:
     """
-    Class that represents a logarithmic probabilistic counter's (with decreasing chance) application on a certain test chain.
+    Class that represents a logarithmic decreasing chance probabilistic counter's application on a certain test chain.
     Contains attributes such as the test chain, the base, the calculated occurrences, expected occurrences, errors, etc. 
     """
     def __init__(self, char_chain,base):    
         self.char_chain = char_chain
         self.base=base
         self.dict = {}
-        #self.chances={}
         self.count()
         self.expected_values = self.get_expected_values()
         stats = self.get_stats()
@@ -149,15 +147,6 @@ class dec_prob_counter:
             tableArray.append(row)
             n+=1
         self.table = tabulate(tableArray,headers=tableHeader)
-        #sortedAbsErrors = sorted(self.absolute_errors.items(), key=lambda x: x[1], reverse=True)
-        #self.max_absolute_error = sortedAbsErrors[0]
-        #self.min_absolute_error = sortedAbsErrors[-1]
-        #self.mean_absolute_error = sum(self.absolute_errors.values())/len(self.absolute_errors)
-        #sortedRelErrors = sorted(self.relative_errors.items(), key=lambda x: x[1], reverse=True)
-        #self.max_relative_error = sortedRelErrors[0]
-        #self.min_relative_error = sortedRelErrors[-1]
-        #self.mean_relative_error = sum(self.relative_errors.values())/len(self.relative_errors)
-        #self.mean_accuracy_ratio = sum(self.accuracy_ratios.values())/len(self.accuracy_ratios)
         
        
    
@@ -167,7 +156,7 @@ class dec_prob_counter:
             if not c in self.dict:
                 self.dict[c]=0
             if not self.dict[c] in chances:
-                chances[self.dict[c]]= 1/math.pow(self.base,self.dict[c])
+                chances[self.dict[c]]= 1/pow(self.base,self.dict[c])
     
             to_add = random.choices([True,False],[chances[self.dict[c]],1-chances[self.dict[c]]])[0]
             if to_add:
@@ -193,7 +182,7 @@ class dec_prob_counter:
     def get_expected_values(self):
         e_val = {}
         for k in self.dict:
-            e_val[k] = round((math.pow(self.base,self.dict[k]) - self.base + 1)/(self.base-1))
+            e_val[k] = round((pow(self.base,self.dict[k]) - self.base + 1)/(self.base-1))
             
         return e_val
     
@@ -229,12 +218,26 @@ class dec_prob_counter:
 
 
     def __str__(self):
-        text = "Logarithmic decreasing probability counter with base: " + str(self.base) + "\n"# + self.table + "\nMax Absolute Error: " + str(self.max_absolute_error[1]) + "\nMean Absolute Error: " + str(self.mean_absolute_error) + "\nMin Absolute Error: " + str(self.min_absolute_error[1]) + "\nMax Relative Error: " + str(self.max_relative_error[1]*100) + "%\nMean Relative Error: " + str(self.mean_relative_error*100) + "%\nMin Relative Error: " + str(self.min_relative_error[1]*100) + "%\n" + "Mean Accuracy Ratio: " + str(self.mean_accuracy_ratio*100) + "%\n"
+        text = "Logarithmic decreasing probability counter with base: " + str(self.base) + "\n"
         return text
 
 
-def simulate(path,test_chain,n_simulations,counter_type,aux):
-    with open("../testdata/" + path + "sims.txt","w",encoding="utf-8") as f:
+def simulate(path: str,test_chain: char_chain,n_simulations: int,counter_type: int,aux: float)->(dict,dict,dict,dict,dict):
+    """
+    Method to run multiple simulations of probabilistic counters (FPC or LDPC) on a test chain of characters, and collect stats.
+    Also creates 2 files, one containing all the counters simulated and another with an overview of the stats collected across all counters simulated.
+
+    Args:
+        path (str): prefix to the files that will be created containing data.
+        test_chain (char_chain): chain of characters to be tested.
+        n_simulations (int): number of simulations to run.
+        counter_type (int): type of counter to run (FPC or LDPC)
+        aux (float): p chance in the case of FPC or base in the case of LDPC
+
+    Returns:
+        dict,dict,dict,dict,dict: dictionaries containing data on mean: absolute error, accuracy ratio, counters, relative errors and rankings.
+    """
+    with open("../testdata/simulations/" + path + ".txt","w",encoding="utf-8") as f:
         
         all_rel_error={}
         all_acc_ratio={}
@@ -256,7 +259,7 @@ def simulate(path,test_chain,n_simulations,counter_type,aux):
             n=1
             for c,cval in counter.order:
                 
-                #mean_values[c]=mean_values.get(c,0)+counter.expected_values[c]
+               
                 if not c in all_counters:
                     all_counters[c]=[]
                     all_abs_error[c]=[]
@@ -282,9 +285,9 @@ def simulate(path,test_chain,n_simulations,counter_type,aux):
             min_values = {p[0]:int((round(min(p[1]))*1/aux)) for p in all_counters.items()}
             mean_values = {p[0]:int(round(p[1])*1/aux) for p in mean_counters.items()}
         elif counter_type==1:
-            max_values = {p[0]:int(round((math.pow(aux,max(p[1]))-aux+1)/(aux-1))) for p in all_counters.items()}
-            min_values = {p[0]:int(round((math.pow(aux,min(p[1]))-aux+1)/(aux-1))) for p in all_counters.items()}
-            mean_values = {p[0]:int(round((math.pow(aux,p[1])-aux+1)/(aux-1))) for p in mean_counters.items()}
+            max_values = {p[0]:int(round((pow(aux,max(p[1]))-aux+1)/(aux-1))) for p in all_counters.items()}
+            min_values = {p[0]:int(round((pow(aux,min(p[1]))-aux+1)/(aux-1))) for p in all_counters.items()}
+            mean_values = {p[0]:int(round((pow(aux,p[1])-aux+1)/(aux-1))) for p in mean_counters.items()}
 
         
         max_abs_error={p[0]:int(max(p[1])) for p in all_abs_error.items()}
@@ -318,47 +321,239 @@ def simulate(path,test_chain,n_simulations,counter_type,aux):
             relerrstring = str(round(min_rel_error[t],2)) + "% / " + str(round(mean_rel_error[t],2)) + "% / " + str(round(max_rel_error[t],2)) + "%"
             row=[t,counterstring,valuestring,test_chain.exact_count[t],rankstring,test_chain.ranks[t],accstring,abserrstring,relerrstring]
             table_arr.append(row)
-            #print(counterstring)
+            
 
-    with open("../testdata/" + path + "stats.txt","w",encoding="utf-8") as f2:    
-        if counter_type==FPC:            ###################change to globally defined constants
+    with open("../testdata/stats/" + path + ".txt","w",encoding="utf-8") as f2:    
+        if counter_type==FPC:           
             f2.write("simulating fixed probability counter with p=" + str(aux) + " " + str(n_simulations)  + " times" +" for test chain of size " + str(test_chain.chain_size)+"\n" )
         elif counter_type==LDPC:
             f2.write("simulating logarithmic decreasing probability counter with base=" + str(aux) + " " + str(n_simulations)  + " times"+" for test chain of size " + str(test_chain.chain_size)+"\n" )
         f2.write("######################## Stats across all simulations ########################\n")
         f2.write(tabulate(table_arr,headers=tableHeader))
         f2.write("\nMin/Mean/Max")
-        #print(tabulate(table_arr,headers=tableHeader)) 
+       
         
         
+    
+    return mean_abs_error,mean_acc_ratio,mean_counters,mean_rel_error,mean_ranks
+
+
+def plot_relative_error(relative_errors: dict)->None:
+    """
+    Plot the average relative errors for the various types of counters for various input sizes.
+
+    Args:
+        relative_errors (dict): dictionary containing average relative errors for the various counters for various test_chain sizes
+    """
+    average_rel_FPC={}
+    average_rel_LDPC={}
+    for k in relative_errors[FPC]:
+        average_rel_FPC[k] = sum(relative_errors[FPC][k].values())/len(relative_errors[FPC][k])
+        average_rel_LDPC[k] = sum(relative_errors[LDPC][k].values())/len(relative_errors[LDPC][k])
+    
+    plt.plot(average_rel_FPC.keys(),average_rel_FPC.values(),label="FPC")
+    plt.plot(average_rel_LDPC.keys(),average_rel_LDPC.values(),label="LDPC")
+    plt.title("Relative Error evolution for String size n")
+    plt.xlabel("n")
+    plt.ylabel("%")
+    plt.xticks(list(relative_errors[FPC].keys()),rotation=70)
+    plt.legend(loc="upper left")
+    plt.show()
 
 
 
 
 
-import time 
+
+
+
+def plot_absolute_error(absolute_errors: dict)->None:
+    """
+    Plot the average absolue error for the various types of counters for inputs of different sizes.
+
+    Args:
+        absolute_errors (dict): dictionary containing average absolute errors for the various counters for various test_chain sizes
+    """
+    average_abs_FPC={}
+    average_abs_LDPC={}
+    for k in absolute_errors[FPC]:
+        average_abs_FPC[k] = sum(absolute_errors[FPC][k].values())/len(absolute_errors[FPC][k])
+        average_abs_LDPC[k] = sum(absolute_errors[LDPC][k].values())/len(absolute_errors[LDPC][k])
+
+    plt.plot(average_abs_FPC.keys(),average_abs_FPC.values(),label="FPC")
+    plt.plot(average_abs_LDPC.keys(),average_abs_LDPC.values(),label="LDPC")
+    plt.title("Absolute Error evolution for string size n")
+    plt.xlabel("n")
+    plt.ylabel("events")
+    plt.xticks(list(absolute_errors[FPC].keys()),rotation=70)
+    plt.legend(loc="upper left")
+    plt.show()
+
+
+def plot_accuracy_ratio(accuracy_ratios:dict)->None:
+    """
+    Plot the average accuracy ratios for the various types of counters for inputs of different sizes.
+
+    Args:
+        accuracy_ratios (dict): dictionary containing average accuracy ratios for the various counters for various test_chain sizes
+    """
+    average_acc_FPC={}
+    average_acc_LDPC={}
+    for k in accuracy_ratios[FPC]:
+        average_acc_FPC[k] = sum(accuracy_ratios[FPC][k].values())/len(accuracy_ratios[FPC][k])
+        average_acc_LDPC[k] = sum(accuracy_ratios[LDPC][k].values())/len(accuracy_ratios[LDPC][k])
+
+    plt.plot(average_acc_FPC.keys(),average_acc_FPC.values(), label="FPC")
+    plt.plot(average_acc_LDPC.keys(),average_acc_LDPC.values(),label="LDPC")
+    plt.title("Accuracy ratio evolution for string size n")
+    plt.xlabel("n")
+    plt.ylabel("%")
+    plt.xticks(list(accuracy_ratios[FPC].keys()),rotation=70)
+    plt.legend(loc="upper left")
+    plt.show()
+
+def plot_counter_size(average_counters:dict)->None:
+    """
+    Plot the amount of bits needed to represent the average counters of each type of counter
+
+    Args:
+        average_counters (dict): dictionary containing average counter values for the various counters for various test_chain sizes
+    """
+    average_counter_size_FPC={}
+    average_counter_size_LDPC={}
+    exact_counter_digits = {}
+    
+    for k in average_counters[FPC]:
+        average_counter_size_FPC[k] = ceil(log(sum(average_counters[FPC][k].values())/len(average_counters[FPC][k]),2))
+        average_counter_size_LDPC[k] = ceil(log(sum(average_counters[LDPC][k].values())/len(average_counters[LDPC][k]),2))
+        exact_counter_digits[k]=ceil(log(sum(average_counters[EXACT][k].values())/len(average_counters[EXACT][k]),2)) 
+    
+    
+    plt.plot(exact_counter_digits.keys(),exact_counter_digits.values(),label="Exact counter")
+    plt.plot(average_counter_size_FPC.keys(),average_counter_size_FPC.values(),label="FPC")
+    plt.plot(average_counter_size_LDPC.keys(),average_counter_size_LDPC.values(),label="LDPC")
+    plt.title("Average counter bits for string size n")
+    plt.xlabel("n")
+    plt.xticks(list(average_counters[FPC].keys()),rotation=70)
+    plt.ylabel("number of bits")
+    plt.legend(loc="upper left")
+    plt.show()
+
 if __name__ == "__main__":
     
-    for i in [100,1000,10000,100000,1000000]:
-        test_chain = char_chain("rodrigomiguelmaiaferreirarrrrrrrrrroooooo",i)
+    args = sys.argv
+    free_mode=False
+    for i in range(2, len(args)):
+        if i % 2 == 0:
+            if args[i - 1] == "-nsims":
+                nsims = int(args[i])
+
+                if nsims>0:
+
+                    DEFAULT_N_SIMULATIONS = nsims
+                else:
+                    print("Invalid number of simulations, must be int bigger than 0")
+                    sys.exit()
+            elif args[i - 1] == "-fpc":
+                p = float(args[i])
+
+                if p>0:
+
+                    DEFAULT_FPC_P=p
+
+                else:
+                    print("Invalid probability for FPC, must be number bigger than 0")
+                    sys.exit()
+            elif args[i - 1] == "-ldpc":
+                
+                base = eval(args[i],{"__builtins__":None},{"sqrt":sqrt,"log":log})
+                print(base)              
+                if base>0 and base!=1:
+
+                    DEFAULT_LDPC_BASE=base
+
+                else:
+                    print("Invalid base for LDPC, must be number bigger than 0 and not 1")
+                    sys.exit()
+            elif args[i - 1] == "-test_chain":
+                src_string = str(args[i])
+
+                if len(src_string)>0:
+
+                    DEFAULT_TEST_CHAIN_STRING=src_string
+
+                else:
+                    print("Invalid source string for test chain, must have length bigger than 0")
+                    sys.exit()
+            elif args[i - 1] == "-chain_sizes":
+                
+                chain_sizes = eval(args[i],{"__builtins__":None})
+
+                if isinstance(chain_sizes,list) and all(isinstance(item, int) for item in chain_sizes):
+
+                    DEFAULT_SIMULATION_STRING_SIZES=chain_sizes
+
+                else:
+                    print("Invalid chain_sizes list")
+                    sys.exit()
+    if len(args) == 1:
+        print("Executing simulations with default values similar to those shown in the report/testdata\n")
         
-        simulate("fpc"+str(i),test_chain,20,FPC,0.5)
-        simulate("ldpc"+str(i),test_chain,20,LDPC,math.sqrt(2))
-        print(i ,"complete")
+    elif len(args) == 2 and args[len(args) - 1] == "-h":
+        print("\nBy default the program will generate simulations for both counters, of many sizes, to generate data like shown in the report and testdata folder\n"
+              "\n"
+              "Changing the following parameters will still run the simulations, but with the newly defined values\n"
+              "\n\nParameters:\n"
+              "-nsims: integer larger than 0 to denote the number of times each counter will be simulated for each test chain (default = 20)\n"
+              "-test_chain: string from which the test chains will be built (default = \"rodrigomiguelmaiaferreirarrrrrrrrrroooooo\" )\n"
+              "-chain_sizes: list containing the various chain sizes to be simulated (default = [100,500,1000,5000,10000,50000,100000,500000,1000000])\n"
+              "-fpc: float larger than 0 which will be used as the probability in the FPC (default = 0.5)\n"
+              "-ldpc: string expression (accepts sqrt(n) and log(n) besides the basic expressions) to represent the base for the LDPC which must be larger than 0 (default = 2**1/2) \n"
+              "\n"
+              "There is also a special parameter that allows the user to run his own code, after inserted in the denoted section in the bottom of the program:\n"
+              "\n-f: executes the code inserted by the user in the free_mode section of the program (just -h, no argument needed)\n"
+              )
+        sys.exit()
+
+    elif len(args) == 2 and args[len(args) - 1] == "-f":
+        free_mode=True
+        
     
-    """    
-    test_chain = char_chain("rodrigomiguelmaiaferreirarrrrrrrrrroooooo",10000)
-    #counter = dec_prob_counter(test_chain,math.sqrt(2))
-    #counter2 = prob_counter(test_chain,.5)
-    #print(counter)
-    #print(counter2)
-    simulate("finaltestfpc",test_chain,5,0,0.5)
-    simulate("finaltestldpb",test_chain,5,1,math.sqrt(2))
-    """
-    """
-    test_chain = char_chain("rodrigomiguelmaiaferreirarrrrrrrrrroooooo",10000)
-    fpctest=prob_counter(test_chain,.5)
-    dectest = dec_prob_counter(test_chain,math.sqrt(2))
-    print(fpctest)
-    print(dectest)
-    """
+    
+
+    if free_mode:
+        ####################### Insert custom code here #######################
+        print("\n")
+    else:
+        rel_err={}
+        rel_err[FPC]={}
+        rel_err[LDPC]={}
+        abs_err={}
+        abs_err[FPC]={}
+        abs_err[LDPC]={}
+        acc_ratio={}
+        acc_ratio[FPC]={}
+        acc_ratio[LDPC]={}
+        counters={}
+        counters[FPC]={}
+        counters[LDPC]={}
+        counters[EXACT]={}
+        for i in DEFAULT_SIMULATION_STRING_SIZES:
+            test_chain = char_chain(DEFAULT_TEST_CHAIN_STRING,i)
+            resfpc=simulate("fpc"+str(i),test_chain,DEFAULT_N_SIMULATIONS,FPC,DEFAULT_FPC_P)
+            resldpc=simulate("ldpc"+str(i),test_chain,DEFAULT_N_SIMULATIONS,LDPC,DEFAULT_LDPC_BASE)
+            rel_err[FPC][i]=resfpc[3]
+            rel_err[LDPC][i]=resldpc[3]
+            abs_err[FPC][i]=resfpc[0]
+            abs_err[LDPC][i]=resldpc[0]
+            acc_ratio[FPC][i]=resfpc[1]
+            acc_ratio[LDPC][i]=resldpc[1]
+            counters[FPC][i]=resfpc[2]
+            counters[LDPC][i]=resldpc[2]
+            counters[EXACT][i]=test_chain.exact_count
+            print(i ,"complete")  
+        plot_relative_error(rel_err)
+        plot_absolute_error(abs_err)
+        plot_accuracy_ratio(acc_ratio)
+        plot_counter_size(counters)
+        
