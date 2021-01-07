@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.6)  6 JAN 2021 22:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.6)  7 JAN 2021 10:02
 entering extended mode
 **./report.tex
 (report.tex
@@ -164,60 +164,51 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 41.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 41.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 45.
 
+Underfull \vbox (badness 4819) has occurred while \output is active []
 
-LaTeX Warning: Command \textasciiacute invalid in math mode on input line 64.
-
-
-LaTeX Warning: Command \textasciiacute invalid in math mode on input line 64.
-
-Missing character: There is no ´ in font cmr7!
-[1{C:/Users/rodri/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
+ [1{C:/Users/rodri/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
 
 
 ]
-<relative_error_big.png, id=20, 462.528pt x 346.896pt>
+<relative_error_big.png, id=22, 462.528pt x 346.896pt>
 File: relative_error_big.png Graphic file (type png)
 <use relative_error_big.png>
-Package pdftex.def Info: relative_error_big.png  used on input line 94.
+Package pdftex.def Info: relative_error_big.png  used on input line 97.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<absolute_error_big.png, id=22, 462.528pt x 346.896pt>
+<absolute_error_big.png, id=24, 462.528pt x 346.896pt>
 File: absolute_error_big.png Graphic file (type png)
 <use absolute_error_big.png>
-Package pdftex.def Info: absolute_error_big.png  used on input line 99.
+Package pdftex.def Info: absolute_error_big.png  used on input line 102.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<accuracy_ratio_big.png, id=23, 462.528pt x 346.896pt>
+<accuracy_ratio_big.png, id=25, 462.528pt x 346.896pt>
 File: accuracy_ratio_big.png Graphic file (type png)
 <use accuracy_ratio_big.png>
-Package pdftex.def Info: accuracy_ratio_big.png  used on input line 104.
+Package pdftex.def Info: accuracy_ratio_big.png  used on input line 107.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<average_counter_bits_big.png, id=24, 462.528pt x 346.896pt>
+<average_counter_bits_big.png, id=26, 462.528pt x 346.896pt>
 File: average_counter_bits_big.png Graphic file (type png)
 <use average_counter_bits_big.png>
-Package pdftex.def Info: average_counter_bits_big.png  used on input line 109.
+Package pdftex.def Info: average_counter_bits_big.png  used on input line 112.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+ [2 <./relative_error_big.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2 <./relative_error_big.png>] (report.bbl
+(report.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 ) [3 <./absolute_error_big.png> <./accuracy_ratio_big.png> <./average_counter_b
 its_big.png>] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 2263 strings out of 479799
- 34044 string characters out of 2869723
+ 2278 strings out of 479799
+ 34195 string characters out of 2869723
  334700 words of memory out of 3000000
- 19253 multiletter control sequences out of 15000+200000
- 540678 words of font info for 47 fonts, out of 3000000 for 9000
+ 19261 multiletter control sequences out of 15000+200000
+ 542797 words of font info for 54 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,7n,73p,761b,257s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts
@@ -229,19 +220,21 @@ ri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
 Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.
 pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmmi7.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmr10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/rodri/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/rodri/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/rodri/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/rod
-ri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/U
-sers/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.
-pfb>
-Output written on report.pdf (3 pages, 286809 bytes).
+sfonts/cmextra/cmmib9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/rodri/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/rodri/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/rodri/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/rodri/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users
+/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+<C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+sy6.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmti10.pfb>
+Output written on report.pdf (3 pages, 303903 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
+ 93 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
