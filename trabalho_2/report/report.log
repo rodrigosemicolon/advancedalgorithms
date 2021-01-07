@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.6)  7 JAN 2021 10:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.6)  7 JAN 2021 11:48
 entering extended mode
 **./report.tex
 (report.tex
@@ -84,32 +84,19 @@ File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen141
 \Gin@req@width=\dimen142
-)
-(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen143
-\lightrulewidth=\dimen144
-\cmidrulewidth=\dimen145
-\belowrulesep=\dimen146
-\belowbottomsep=\dimen147
-\aboverulesep=\dimen148
-\abovetopsep=\dimen149
-\cmidrulesep=\dimen150
-\cmidrulekern=\dimen151
-\defaultaddspace=\dimen152
-\@cmidla=\count182
-\@cmidlb=\count183
-\@aboverulesep=\dimen153
-\@belowrulesep=\dimen154
-\@thisruleclass=\count184
-\@lastruleclass=\count185
-\@thisrulewidth=\dimen155
+) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count182
+\float@exts=\toks16
+\float@box=\box47
+\@float@everytoks=\toks17
+\@floatcapt=\box48
 )
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count186
-\l__pdf_internal_box=\box47
+\l__kernel_color_stack_int=\count183
+\l__pdf_internal_box=\box49
 )
 
 LaTeX Warning: Unused global option(s):
@@ -136,17 +123,17 @@ LaTeX Font Info:    ... okay on input line 34.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count187
-\scratchdimen=\dimen156
-\scratchbox=\box48
-\nofMPsegments=\count188
-\nofMParguments=\count189
-\everyMPshowfont=\toks16
-\MPscratchCnt=\count190
-\MPscratchDim=\dimen157
-\MPnumerator=\count191
-\makeMPintoPDFobject=\count192
-\everyMPtoPDFconversion=\toks17
+\scratchcounter=\count184
+\scratchdimen=\dimen143
+\scratchbox=\box50
+\nofMPsegments=\count185
+\nofMParguments=\count186
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count187
+\MPscratchDim=\dimen144
+\MPnumerator=\count188
+\makeMPintoPDFobject=\count189
+\everyMPtoPDFconversion=\toks19
 )
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -166,75 +153,74 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 41.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 45.
-
-Underfull \vbox (badness 4819) has occurred while \output is active []
-
  [1{C:/Users/rodri/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
 
 
 ]
-<relative_error_big.png, id=22, 462.528pt x 346.896pt>
+[2]
+<relative_error_big.png, id=26, 462.528pt x 346.896pt>
 File: relative_error_big.png Graphic file (type png)
 <use relative_error_big.png>
-Package pdftex.def Info: relative_error_big.png  used on input line 97.
+Package pdftex.def Info: relative_error_big.png  used on input line 100.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<absolute_error_big.png, id=24, 462.528pt x 346.896pt>
+<absolute_error_big.png, id=28, 462.528pt x 346.896pt>
 File: absolute_error_big.png Graphic file (type png)
 <use absolute_error_big.png>
-Package pdftex.def Info: absolute_error_big.png  used on input line 102.
+Package pdftex.def Info: absolute_error_big.png  used on input line 105.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<accuracy_ratio_big.png, id=25, 462.528pt x 346.896pt>
+<accuracy_ratio_big.png, id=29, 462.528pt x 346.896pt>
 File: accuracy_ratio_big.png Graphic file (type png)
 <use accuracy_ratio_big.png>
-Package pdftex.def Info: accuracy_ratio_big.png  used on input line 107.
+Package pdftex.def Info: accuracy_ratio_big.png  used on input line 110.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<average_counter_bits_big.png, id=26, 462.528pt x 346.896pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<average_counter_bits_big.png, id=30, 462.528pt x 346.896pt>
 File: average_counter_bits_big.png Graphic file (type png)
 <use average_counter_bits_big.png>
-Package pdftex.def Info: average_counter_bits_big.png  used on input line 112.
+Package pdftex.def Info: average_counter_bits_big.png  used on input line 115.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
- [2 <./relative_error_big.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-(report.bbl
+ [3 <./relative_error_big.png> <./absolute_error_big.png> <./accuracy_ratio_big
+.png> <./average_counter_bits_big.png>] (report.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [3 <./absolute_error_big.png> <./accuracy_ratio_big.png> <./average_counter_b
-its_big.png>] (report.aux) ) 
+) [4
+
+] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 2278 strings out of 479799
- 34195 string characters out of 2869723
- 334700 words of memory out of 3000000
- 19261 multiletter control sequences out of 15000+200000
+ 2279 strings out of 479799
+ 34154 string characters out of 2869723
+ 334374 words of memory out of 3000000
+ 19262 multiletter control sequences out of 15000+200000
  542797 words of font info for 54 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,7n,73p,761b,257s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/rodri/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/rodri/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/rodri/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/rod
-ri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
-Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.
+ 66i,7n,73p,761b,253s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmbx9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/rodri/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/rodri/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/rodri/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/User
+s/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb>
+<C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmext
+ra/cmmib9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmr10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmr12.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/rodri/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/rodri/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/rodri/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/rodri/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ro
+dri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/
+Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.
 pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmmi7.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cmextra/cmmib9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/rodri/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/rodri/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/rodri/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/rodri/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users
-/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-<C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-sy6.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmsy7.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmti10.pfb>
-Output written on report.pdf (3 pages, 303903 bytes).
+m/cmti10.pfb>
+Output written on report.pdf (4 pages, 305274 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
+ 96 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
