@@ -50,24 +50,24 @@ class char_chain:
 class prob_counter:
     """
     Class that represents a fixed chance probabilistic counter's application on a certain test chain.
-    Contains attributes such as the test chain, the chance, the calculated occurrences, expected occurrences, errors, etc. 
+    Contains attributes such as the test chain, the chance, the calculated occurrences, estimated occurrences, errors, etc. 
     """
     def __init__(self, char_chain, p):    
         self.char_chain = char_chain
         self.p=p
-        self.dict = {}
+        self.dict = {} ##the counters
         self.count()
-        self.expected_values = self.get_expected_values()
+        self.estimated_values = self.get_estimated_values()
         stats = self.get_stats()
         self.absolute_errors = stats[0] 
         self.relative_errors = stats[1]
         self.accuracy_ratios = stats[2]
-        tableHeader = ['Char','Counter Value','Expected Value','Real Value','Expected Rank','Real Rank','Accuracy Ratio','Absolute Error','Relative Error']
+        tableHeader = ['Char','Counter Value','Estimated Value','Real Value','Estimated Rank','Real Rank','Accuracy Ratio','Absolute Error','Relative Error']
         tableArray=[]
         self.order = sorted(self.dict.items(), key=lambda x: x[1], reverse=True)
         n=1
         for i,_ in self.order:            
-            row = [i,self.dict[i],self.expected_values[i],self.char_chain.exact_count[i],n,self.char_chain.ranks[i],str(self.accuracy_ratios[i]*100) + "%",self.absolute_errors[i],str(self.relative_errors[i]*100) + "%" ]
+            row = [i,self.dict[i],self.estimated_values[i],self.char_chain.exact_count[i],n,self.char_chain.ranks[i],str(self.accuracy_ratios[i]*100) + "%",self.absolute_errors[i],str(self.relative_errors[i]*100) + "%" ]
             tableArray.append(row)
             n+=1
         self.table = tabulate(tableArray,headers=tableHeader)
@@ -85,7 +85,7 @@ class prob_counter:
     
    
             
-    def get_expected_values(self):
+    def get_estimated_values(self):
         e_val = {}
         for k in self.dict:
             e_val[k] = self.dict[k]*(1/self.p)
@@ -96,7 +96,7 @@ class prob_counter:
         rel_error={}   
         for k in self.char_chain.exact_count:
             if self.char_chain.exact_count[k]>0:
-                rel_error[k]=abs(self.char_chain.exact_count[k]-self.expected_values[k])/self.char_chain.exact_count[k]
+                rel_error[k]=abs(self.char_chain.exact_count[k]-self.estimated_values[k])/self.char_chain.exact_count[k]
             else:
                 rel_error[k]=0
 
@@ -108,9 +108,9 @@ class prob_counter:
         accuracy_ratios={}
         for k in self.char_chain.exact_count:
             if self.char_chain.exact_count[k]>0:
-                relative_errors[k]=abs(self.char_chain.exact_count[k]-self.expected_values[k])/self.char_chain.exact_count[k]
-                absolute_errors[k]=abs(self.char_chain.exact_count[k]-self.expected_values[k])
-                accuracy_ratios[k]=self.expected_values[k]/self.char_chain.exact_count[k]
+                relative_errors[k]=abs(self.char_chain.exact_count[k]-self.estimated_values[k])/self.char_chain.exact_count[k]
+                absolute_errors[k]=abs(self.char_chain.exact_count[k]-self.estimated_values[k])
+                accuracy_ratios[k]=self.estimated_values[k]/self.char_chain.exact_count[k]
             else:
                 relative_errors[k]=0
                 absolute_errors[k]=0
@@ -119,31 +119,31 @@ class prob_counter:
 
 
     def __str__(self):
-        text = "Fixed probabilistic counter with chance: " + str(self.p*100) + "%\n" +self.table 
+        text = "Fixed probabilistic counter with chance: " + str(self.p*100) + "%\n" +self.table +"\n"
         return text
 
 
 class dec_prob_counter:
     """
     Class that represents a logarithmic decreasing chance probabilistic counter's application on a certain test chain.
-    Contains attributes such as the test chain, the base, the calculated occurrences, expected occurrences, errors, etc. 
+    Contains attributes such as the test chain, the base, the calculated occurrences, estimated occurrences, errors, etc. 
     """
     def __init__(self, char_chain,base):    
         self.char_chain = char_chain
         self.base=base
-        self.dict = {}
+        self.dict = {} ##the counters
         self.count()
-        self.expected_values = self.get_expected_values()
+        self.estimated_values = self.get_estimated_values()
         stats = self.get_stats()
         self.absolute_errors = stats[0] 
         self.relative_errors = stats[1]
         self.accuracy_ratios = stats[2]
-        tableHeader = ['Char','Counter Value','Expected Value','Real Value','Expected Rank','Real Rank','Accuracy Ratio','Absolute Error','Relative Error']
+        tableHeader = ['Char','Counter Value','Estimated Value','Real Value','Estimated Rank','Real Rank','Accuracy Ratio','Absolute Error','Relative Error']
         tableArray=[]
         self.order = sorted(self.dict.items(), key=lambda x: x[1], reverse=True)
         n=1
         for i,_ in self.order:            
-            row = [i,self.dict[i],self.expected_values[i],self.char_chain.exact_count[i],n,self.char_chain.ranks[i],str(self.accuracy_ratios[i]*100) + "%",self.absolute_errors[i],str(self.relative_errors[i]*100) + "%" ]
+            row = [i,self.dict[i],self.estimated_values[i],self.char_chain.exact_count[i],n,self.char_chain.ranks[i],str(self.accuracy_ratios[i]*100) + "%",self.absolute_errors[i],str(self.relative_errors[i]*100) + "%" ]
             tableArray.append(row)
             n+=1
         self.table = tabulate(tableArray,headers=tableHeader)
@@ -170,19 +170,19 @@ class dec_prob_counter:
         accuracy_ratios={}
         for k in self.char_chain.exact_count:
             if self.char_chain.exact_count[k]>0:
-                relative_errors[k]=abs(self.char_chain.exact_count[k]-self.expected_values[k])/self.char_chain.exact_count[k]
-                absolute_errors[k]=abs(self.char_chain.exact_count[k]-self.expected_values[k])
-                accuracy_ratios[k]=self.expected_values[k]/self.char_chain.exact_count[k]
+                relative_errors[k]=abs(self.char_chain.exact_count[k]-self.estimated_values[k])/self.char_chain.exact_count[k]
+                absolute_errors[k]=abs(self.char_chain.exact_count[k]-self.estimated_values[k])
+                accuracy_ratios[k]=self.estimated_values[k]/self.char_chain.exact_count[k]
             else:
                 relative_errors[k]=0
                 absolute_errors[k]=0
                 accuracy_ratios[k]=0
         return absolute_errors,relative_errors,accuracy_ratios
 
-    def get_expected_values(self):
+    def get_estimated_values(self):
         e_val = {}
         for k in self.dict:
-            e_val[k] = round((pow(self.base,self.dict[k]) - self.base + 1)/(self.base-1))
+            e_val[k] = round((pow(self.base,self.dict[k]) - self.base + 1)/(self.base-1))            
             
         return e_val
     
@@ -190,7 +190,7 @@ class dec_prob_counter:
         abs_error={}   
         for k in self.char_chain.exact_count:
             if self.char_chain.exact_count[k]>0:
-                abs_error[k]=abs(self.char_chain.exact_count[k]-self.expected_values[k])
+                abs_error[k]=abs(self.char_chain.exact_count[k]-self.estimated_values[k])
             else:
                 abs_error[k]=0
 
@@ -200,7 +200,7 @@ class dec_prob_counter:
         rel_error={}   
         for k in self.char_chain.exact_count:
             if self.char_chain.exact_count[k]>0:
-                rel_error[k]=abs(self.char_chain.exact_count[k]-self.expected_values[k])/self.char_chain.exact_count[k]
+                rel_error[k]=abs(self.char_chain.exact_count[k]-self.estimated_values[k])/self.char_chain.exact_count[k]
             else:
                 rel_error[k]=0
 
@@ -210,7 +210,7 @@ class dec_prob_counter:
         acc_ratio={}   
         for k in self.char_chain.exact_count:
             if self.char_chain.exact_count[k]>0:
-                acc_ratio[k]=self.expected_values[k]/self.char_chain.exact_count[k]
+                acc_ratio[k]=self.estimated_values[k]/self.char_chain.exact_count[k]
             else:
                 acc_ratio[k]=0
 
@@ -218,7 +218,7 @@ class dec_prob_counter:
 
 
     def __str__(self):
-        text = "Logarithmic decreasing probability counter with base: " + str(self.base) + "\n"
+        text = "Logarithmic decreasing probability counter with base: " + str(self.base) + "\n" + self.table + "\n"
         return text
 
 
@@ -308,7 +308,7 @@ def simulate(path: str,test_chain: char_chain,n_simulations: int,counter_type: i
         
             
             
-        tableHeader = ['Char','Counter Value','Expected Value','Real Value','Expected Rank','Real Rank','Accuracy Ratio','Absolute Error','Relative Error']
+        tableHeader = ['Char','Counter Value','Estimated Value','Real Value','Estimated Rank','Real Rank','Accuracy Ratio','Absolute Error','Relative Error']
         
         ordered_avg_values=sorted(mean_values.items(), key=lambda x: x[1], reverse=True)
         table_arr=[]
@@ -358,6 +358,7 @@ def plot_relative_error(relative_errors: dict)->None:
     plt.ylabel("%")
     plt.xticks(list(relative_errors[FPC].keys()),rotation=70)
     plt.legend(loc="upper left")
+    plt.savefig("../testdata/graphics/relative_error.png")
     plt.show()
 
 
@@ -387,6 +388,7 @@ def plot_absolute_error(absolute_errors: dict)->None:
     plt.ylabel("events")
     plt.xticks(list(absolute_errors[FPC].keys()),rotation=70)
     plt.legend(loc="upper left")
+    plt.savefig("../testdata/graphics/absolute_error.png")
     plt.show()
 
 
@@ -410,6 +412,7 @@ def plot_accuracy_ratio(accuracy_ratios:dict)->None:
     plt.ylabel("%")
     plt.xticks(list(accuracy_ratios[FPC].keys()),rotation=70)
     plt.legend(loc="upper left")
+    plt.savefig("../testdata/graphics/accuracy_ratio.png")
     plt.show()
 
 def plot_counter_size(average_counters:dict)->None:
@@ -437,6 +440,7 @@ def plot_counter_size(average_counters:dict)->None:
     plt.xticks(list(average_counters[FPC].keys()),rotation=70)
     plt.ylabel("number of bits")
     plt.legend(loc="upper left")
+    plt.savefig("../testdata/graphics/bits_required.png")
     plt.show()
 
 if __name__ == "__main__":
@@ -523,6 +527,7 @@ if __name__ == "__main__":
 
     if free_mode:
         ####################### Insert custom code here #######################
+        
         print("\n")
     else:
         rel_err={}

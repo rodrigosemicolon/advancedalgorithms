@@ -1,0 +1,20 @@
+explain why the basis for fixed prob are 1/2^k
+better explanation of the context of the problem
+better statistics
+maybe change absolute error and other stats (to not absolute value, but to allow negative values) JUST MAYBE
+maybe change dic incrementations to apply with get as in bookmarked stack overflow example
+
+
+UPDATE TABLES IN REPORT
+CHECK N BITS OR N OPERATIONS IN EARLY FPC SECTION
+ASK IF SUPPOSED TO COMPARE ACC OF CORRECT COUNTER VAL VS ACTUAL COUNTER VAL OR, CORRECT EXPECTED VAL VS EXPECTED VAL
+
+
+
+improve graphics
+add exact counter to digits plot
+compare very little test_chain stats vs huge test_chain stats
+now that its getting stats by letter, variance and std dev and all other stats are easier to get
+
+explain how the values were calculated
+explain that its useless to plot exact counter for most stats
