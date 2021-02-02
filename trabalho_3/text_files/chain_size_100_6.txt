@@ -1,0 +1,32 @@
+z x z y x z x x y x y z z z x x z z y z x x y z z x z y z y z y z z x z y y z x z y y x y x x x x x w s z l i i k n e o i h a u b e i i r z e e e y v s g i o i r e y g w s i d c i i f u z o u o j e u 
+
+Source String:xyz + aaaaabcdeeeeefghiiiiijklmnooooopqrstuuuuuvwxyz
+N:100
+Exact Counts:{'z': 22, 'x': 18, 'y': 15, 'w': 2, 's': 3, 'l': 1, 'i': 10, 'k': 1, 'n': 1, 'e': 7, 'o': 4, 'h': 1, 'a': 1, 'u': 4, 'b': 1, 'r': 2, 'v': 1, 'g': 2, 'd': 1, 'c': 1, 'f': 1, 'j': 1}
+Exact Ranks:{'z': 1, 'x': 2, 'y': 3, 'i': 4, 'e': 5, 'o': 6, 'u': 7, 's': 8, 'g': 9, 'r': 10, 'w': 11, 'a': 12, 'b': 13, 'c': 14, 'd': 15, 'f': 16, 'h': 17, 'j': 18, 'k': 19, 'l': 20, 'n': 21, 'v': 22}
+
+Table:
+Symbol      Exact Occurrences  Exact Frequency      Rank
+--------  -------------------  -----------------  ------
+z                          22  22.0%                   1
+x                          18  18.0%                   2
+y                          15  15.0%                   3
+i                          10  10.0%                   4
+e                           7  7.0%                    5
+o                           4  4.0%                    6
+u                           4  4.0%                    7
+s                           3  3.0%                    8
+g                           2  2.0%                    9
+r                           2  2.0%                   10
+w                           2  2.0%                   11
+a                           1  1.0%                   12
+b                           1  1.0%                   13
+c                           1  1.0%                   14
+d                           1  1.0%                   15
+f                           1  1.0%                   16
+h                           1  1.0%                   17
+j                           1  1.0%                   18
+k                           1  1.0%                   19
+l                           1  1.0%                   20
+n                           1  1.0%                   21
+v                           1  1.0%                   22

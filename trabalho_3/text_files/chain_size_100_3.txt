@@ -1,0 +1,35 @@
+a b m z a y f r c q p m t w e q m y h q y h u h o d o n b f r g l y e f v f c t k b m u f j o v f r w s z l i i k n e o i h a u b e i i r z e e e y v s g i o i r e y g w s i d c i i f u z o u o j e u 
+
+Source String:abcdefghijklmnopqrstuvwxyz + aaaaabcdeeeeefghiiiiijklmnooooopqrstuuuuuvwxyz
+N:100
+Exact Counts:{'a': 3, 'b': 4, 'm': 4, 'z': 4, 'y': 6, 'f': 7, 'r': 5, 'c': 3, 'q': 3, 'p': 1, 't': 2, 'w': 3, 'e': 9, 'h': 4, 'u': 6, 'o': 7, 'd': 2, 'n': 2, 'g': 3, 'l': 2, 'v': 3, 'k': 2, 'j': 2, 's': 3, 'i': 10}
+Exact Ranks:{'i': 1, 'e': 2, 'f': 3, 'o': 4, 'u': 5, 'y': 6, 'r': 7, 'b': 8, 'h': 9, 'm': 10, 'z': 11, 'a': 12, 'c': 13, 'g': 14, 'q': 15, 's': 16, 'v': 17, 'w': 18, 'd': 19, 'j': 20, 'k': 21, 'l': 22, 'n': 23, 't': 24, 'p': 25}
+
+Table:
+Symbol      Exact Occurrences  Exact Frequency      Rank
+--------  -------------------  -----------------  ------
+i                          10  10.0%                   1
+e                           9  9.0%                    2
+f                           7  7.0%                    3
+o                           7  7.0%                    4
+u                           6  6.0%                    5
+y                           6  6.0%                    6
+r                           5  5.0%                    7
+b                           4  4.0%                    8
+h                           4  4.0%                    9
+m                           4  4.0%                   10
+z                           4  4.0%                   11
+a                           3  3.0%                   12
+c                           3  3.0%                   13
+g                           3  3.0%                   14
+q                           3  3.0%                   15
+s                           3  3.0%                   16
+v                           3  3.0%                   17
+w                           3  3.0%                   18
+d                           2  2.0%                   19
+j                           2  2.0%                   20
+k                           2  2.0%                   21
+l                           2  2.0%                   22
+n                           2  2.0%                   23
+t                           2  2.0%                   24
+p                           1  1.0%                   25

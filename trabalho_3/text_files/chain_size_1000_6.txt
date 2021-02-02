@@ -1,0 +1,36 @@
+y x y y x z x z y x x x z z y z y z x y x z y x y x z y x x x z y x x z y y z y y y z z z z z z x y z x x y x x z y z z y z y y x z z x x z y x z y z x z y x y y y z z y y x z z y y y x y y z y z z y y x z z x x z y x x z x y z z y x y x x y z x y z y y z x z z x x x y z y z x x z z y z z z x x z z z y x y x y x y z z z y x y y y z z y z z y x y x y z z z z x y x z x x y z y y x x y y y z y x x z z y x x y x y y y z y y x y z x y z z z y z z x y z y x y z x z y x y x y y z z y z z z x x x z z z x x x x z z y x x x x x y z z x y z y z z y z y y y y y y z y y z x y z z x x y y y y z z y x z z x y x x y x y x y y y x y x z z y z z y z x x z z y y z y y x z z y x x x x y z x x z y y x y y z z x z y x y y x z z z z z z z z z z z z z y x y z z x x z y x z z y y x z z y x x x z x x y x x z z z y y z x z z z x x x z y x y x y z z x y x z y x x z z y x z x y z x x z z y x z y x x z x z x y z z y z x z y z y x y y z y z y y z y x y y y y x z y x x y y x x y z z x y x x y z x x x y x y y x z y x m a k i o o a a e j e p u v u g o x s q o m e u e u i o e n e y o y a u x o p c d d b i i z i e t e g e i i u u p o a p u e i m c m a a i i o r w j a k a u u k e y a x i u z i w e c o u f u y d u r e m i w c o x a e o u a o r o s m i b o v m d u d g n s u f a v u m k x e h e d v o a m p n u i v i x w r u a t o f e u e o p o h p n o e a u o t o a u d c a u r u j c v x q u s e u o u u a i i a z a b r y f y r o h m l u a g n c a u o l o z u u i u u n m p l a s f u f e o f u o o a i u u n a v p m c f a k m p o a r z b o a a i u w p y e j f c o i a u m e i e a y k h a r u a e u i k m c i f b f r l a a p q e u i u h u o a i i a c e u u e p s y u o n a o m i h x d u p y v a e e t c o p z o e a u e b a i n i f o i n j o o x f i g z e i w i u l i u g a a y e i o e w m e r a u d y h v r v i p a n p u i a z n x l q e e o a u o d i d a o u u u i a a i j i h w o o b p f a v i e j a k p v r o e o i q f a m a r p e e e o a u r z i a i v z i f i g g w z u u a s s w w a i z v h n z o x e r s m e f q n 
+
+Source String:xyz + aaaaabcdeeeeefghiiiiijklmnooooopqrstuuuuuvwxyz
+N:1000
+Exact Counts:{'y': 182, 'x': 166, 'z': 188, 'm': 19, 'a': 59, 'k': 8, 'i': 50, 'o': 50, 'e': 45, 'j': 7, 'p': 20, 'u': 62, 'v': 14, 'g': 8, 's': 9, 'q': 6, 'n': 14, 'c': 12, 'd': 11, 'b': 7, 't': 4, 'r': 16, 'w': 11, 'f': 17, 'h': 9, 'l': 6}
+Exact Ranks:{'z': 1, 'y': 2, 'x': 3, 'u': 4, 'a': 5, 'i': 6, 'o': 7, 'e': 8, 'p': 9, 'm': 10, 'f': 11, 'r': 12, 'n': 13, 'v': 14, 'c': 15, 'd': 16, 'w': 17, 'h': 18, 's': 19, 'g': 20, 'k': 21, 'b': 22, 'j': 23, 'l': 24, 'q': 25, 't': 26}
+
+Table:
+Symbol      Exact Occurrences  Exact Frequency      Rank
+--------  -------------------  -----------------  ------
+z                         188  18.8%                   1
+y                         182  18.2%                   2
+x                         166  16.6%                   3
+u                          62  6.2%                    4
+a                          59  5.9%                    5
+i                          50  5.0%                    6
+o                          50  5.0%                    7
+e                          45  4.5%                    8
+p                          20  2.0%                    9
+m                          19  1.9%                   10
+f                          17  1.7%                   11
+r                          16  1.6%                   12
+n                          14  1.4%                   13
+v                          14  1.4%                   14
+c                          12  1.2%                   15
+d                          11  1.1%                   16
+w                          11  1.1%                   17
+h                           9  0.9%                   18
+s                           9  0.9%                   19
+g                           8  0.8%                   20
+k                           8  0.8%                   21
+b                           7  0.7%                   22
+j                           7  0.7%                   23
+l                           6  0.6%                   24
+q                           6  0.6%                   25
+t                           4  0.4%                   26
