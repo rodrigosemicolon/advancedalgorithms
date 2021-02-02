@@ -1,32 +1,31 @@
-a l z u a u a i i o e e v t q o e n r b m o l a n i u c k a e a a h i r u u n i e u e q v e e l k w c x q d u d i r a a i o f n r a u e i w i e a r f e a z n y e n i u o o r a o a o x i a l e m v d o 
+a i u j d u h f i u z v o o y e o f u v c g o k c e i o u c e u n g o a u u l a a i u l u u i u w u a u e c i a a f a p p w u o l j i e i x m g w w h n e z a a v z a o z v u w k u p n o d x m v a i g 
 
 Source String:aaaaabcdeeeeefghiiiiijklmnooooopqrstuuuuuvwxyz
 N:100
-Exact Counts:{'a': 15, 'l': 4, 'z': 2, 'u': 9, 'i': 11, 'o': 9, 'e': 13, 'v': 3, 't': 1, 'q': 3, 'n': 6, 'r': 6, 'b': 1, 'm': 2, 'c': 2, 'k': 2, 'h': 1, 'w': 2, 'x': 2, 'd': 3, 'f': 2, 'y': 1}
-Exact Ranks:{'a': 1, 'e': 2, 'i': 3, 'o': 4, 'u': 5, 'n': 6, 'r': 7, 'l': 8, 'd': 9, 'q': 10, 'v': 11, 'c': 12, 'f': 13, 'k': 14, 'm': 15, 'w': 16, 'x': 17, 'z': 18, 'b': 19, 'h': 20, 't': 21, 'y': 22}
+Exact Counts:{'a': 12, 'i': 9, 'u': 17, 'j': 2, 'd': 2, 'h': 2, 'f': 3, 'z': 4, 'v': 5, 'o': 9, 'y': 1, 'e': 6, 'c': 4, 'g': 4, 'k': 2, 'n': 3, 'l': 3, 'w': 5, 'p': 3, 'x': 2, 'm': 2}
+Exact Ranks:{'u': 1, 'a': 2, 'i': 3, 'o': 4, 'e': 5, 'v': 6, 'w': 7, 'c': 8, 'g': 9, 'z': 10, 'f': 11, 'l': 12, 'n': 13, 'p': 14, 'd': 15, 'h': 16, 'j': 17, 'k': 18, 'm': 19, 'x': 20, 'y': 21}
 
 Table:
 Symbol      Exact Occurrences  Exact Frequency      Rank
 --------  -------------------  -----------------  ------
-a                          15  15.0%                   1
-e                          13  13.0%                   2
-i                          11  11.0%                   3
+u                          17  17.0%                   1
+a                          12  12.0%                   2
+i                           9  9.0%                    3
 o                           9  9.0%                    4
-u                           9  9.0%                    5
-n                           6  6.0%                    6
-r                           6  6.0%                    7
-l                           4  4.0%                    8
-d                           3  3.0%                    9
-q                           3  3.0%                   10
-v                           3  3.0%                   11
-c                           2  2.0%                   12
-f                           2  2.0%                   13
-k                           2  2.0%                   14
-m                           2  2.0%                   15
-w                           2  2.0%                   16
-x                           2  2.0%                   17
-z                           2  2.0%                   18
-b                           1  1.0%                   19
-h                           1  1.0%                   20
-t                           1  1.0%                   21
-y                           1  1.0%                   22
+e                           6  6.0%                    5
+v                           5  5.0%                    6
+w                           5  5.0%                    7
+c                           4  4.0%                    8
+g                           4  4.0%                    9
+z                           4  4.0%                   10
+f                           3  3.0%                   11
+l                           3  3.0%                   12
+n                           3  3.0%                   13
+p                           3  3.0%                   14
+d                           2  2.0%                   15
+h                           2  2.0%                   16
+j                           2  2.0%                   17
+k                           2  2.0%                   18
+m                           2  2.0%                   19
+x                           2  2.0%                   20
+y                           1  1.0%                   21
