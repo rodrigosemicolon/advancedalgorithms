@@ -19,14 +19,14 @@ class lossycounting_sd:
         
         self.ranks={}
         self.path = path
-        #self.source_exact_count={}
+        
         self.get_stats()
         self.delta = 0
         self.n = 0
         self.t = {}
         self.__read()
         self.get_ranks()
-       # self.__results()
+      
 
 
     def get_stats(self)->None:
@@ -166,7 +166,7 @@ class lossycounting_id:
         self.t = {}
         self.__read()
         self.get_ranks()
-        #self.__results()
+        
 
     def get_stats(self)->None:
         """
@@ -201,14 +201,13 @@ class lossycounting_id:
                 
                 
                 
-                #print(self.t)
+                
                 if self.n%self.k==0:
-                    #print("cleaned")
-                    #self.delta = possible_delta
+                    
                     keys = list(self.t.keys())
                     for j in keys:
                         if self.t[j] + self.delta[j] <=current_bucket:
-                            #print("removed " ,j)
+                            
                             self.t.pop(j)
                             self.delta.pop(j)
                     current_bucket+=1

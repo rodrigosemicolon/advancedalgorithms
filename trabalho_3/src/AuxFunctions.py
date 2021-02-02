@@ -13,16 +13,20 @@ def average_error_to_table(error_ind:dict,error_sha:dict)->str:
         str: Table providing an overview of all stats.
     """
     aux_table  = []
-    aux_header = ["Version","Absolute Error", "Relative Error", "False Positive", "Rank Misplacement" ]
+    aux_header = ["Version","Absolute Error (%)", "Relative Error (%)", "False Positive (items)", "False Positive (%)", "Rank Misplacement (%)" ]
     row=["Individual Deltas"]
     for att in error_ind:
-                
-        row = row + [str(error_ind[att])]
+        if att!="False Positive":        
+            row = row + [str(round(error_ind[att],3)) + "%" ]
+        else:
+            row = row + [str(round(error_ind[att],3))]
     aux_table.append(row)
     row=["Shared Delta"]
     for att in error_sha:
-            
-        row = row + [str(error_sha[att])]
+        if att!="False Positive":    
+            row = row + [str(round(error_sha[att],3))+"%" ]
+        else:
+            row = row + [str(round(error_sha[att],3)) ]
     aux_table.append(row)
     tabulated_table= tabulate(aux_table, headers=aux_header) + "\n\n"
         
@@ -40,6 +44,7 @@ def initialize_error_dict()->dict:
     d["Absolute Error"]=[]
     d["Relative Error"]=[]
     d["False Positive"]=[]
+    d["False Positive %"] =[]
     d["Rank Misplacement"]=[]
     return d
 

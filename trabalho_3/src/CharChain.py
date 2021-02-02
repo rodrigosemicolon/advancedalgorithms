@@ -48,7 +48,7 @@ class char_chain:
         """
         Outputs this chain's information to its text file.
         """
-        #split_path = self.path.split(".txt")
+        
         with open(self.path,"a",encoding="utf-8") as f:
             f.write(str(self))
 
@@ -77,22 +77,13 @@ class char_chain:
         with open(path, "w", encoding="utf-8") as fw:
             with open(self.path,"r",encoding="utf-8") as f1:
 
-                #while True:
-                """
-                i = f1.read(2)
-                if not i:
-                break
-                """
+              
                 i  = f1.readline()[:-1]
                 fw.write(i)
 
             with open(other_chain.path,"r",encoding="utf-8") as f2:
 
-                #while True:
-                    
-                #    i = f2.read(2)
-                #    if not i:
-                #        break
+                
                 i=f2.readline()[:-1]
                 fw.write(i)
 
@@ -102,8 +93,7 @@ class char_chain:
             for val in self.exact_count:
                 exact_count[val]=self.exact_count[val]
             for occurrence in other_chain.exact_count:
-                #if not occurrence in self.exact_count:
-                #    self.exact_count[occurrence]=0
+                
                 exact_count[occurrence] = self.exact_count.get(occurrence,0) + other_chain.exact_count[occurrence]
             source_string = self.source_string +" + " + other_chain.source_string
             chain_size = self.chain_size + other_chain.chain_size

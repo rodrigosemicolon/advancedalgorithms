@@ -10,7 +10,7 @@ DEFAULT_CHAIN_SOURCE_1="abcdefghijklmnopqrstuvwxyz"
 DEFAULT_CHAIN_SOURCE_2="aaaaabcdeeeeefghiiiiijklmnooooopqrstuuuuuvwxyz"
 DEFAULT_CHAIN_SOURCE_3="xyz"
 
-class sim_run:
+class Simple_Simulation:
     """
     Class containing information regarding the performance of both versions of the lossy counting algorithm for an instance of the problem.
     """
@@ -43,25 +43,22 @@ class sim_run:
             return None
 
         stats=initialize_error_dict()
-        """
-        stats={}
-        stats["Absolute Error"]=[]
-        stats["Relative Error"]=[]
-        stats["False Positive"]=[]
-        stats["Rank Misplacement"]=[]
-        """
+        
         for item in d:
             stats["Absolute Error"].append(d[item]["Absolute Error"])
             stats["Relative Error"].append(d[item]["Relative Error"])
             stats["False Positive"].append(d[item]["False Positive"])
-            stats["Rank Misplacement"].append(abs(d[item]["Exact Rank"]-d[item]["Estimated Rank"])!=0)
+            stats["False Positive %"].append(d[item]["False Positive"])
+            if d[item]["Estimated Rank"]!= "None":
+                stats["Rank Misplacement"].append(abs(d[item]["Exact Rank"]-d[item]["Estimated Rank"])!=0)
 
         
         
         stats["Absolute Error"] = sum(stats["Absolute Error"])/len(stats["Absolute Error"])
         stats["Relative Error"]= sum(stats["Relative Error"])/len(stats["Relative Error"])
-        stats["False Positive"]= sum(stats["False Positive"])
-        stats["Rank Misplacement"]=sum(stats["Rank Misplacement"])
+        stats["False Positive"]= sum([1 for i in stats["False Positive"] if i==True])
+        stats["False Positive %"]= 100*sum(stats["False Positive %"])/len(stats["False Positive %"])
+        stats["Rank Misplacement"]=100*sum(stats["Rank Misplacement"])/len([1 for i in d if d[item]["Estimated Rank"]!="None"])
         
         return stats
 
@@ -81,26 +78,23 @@ class sim_run:
             return None
 
         stats=initialize_error_dict()
-        """
-        stats={}
-        stats["Absolute Error"]=[]
-        stats["Relative Error"]=[]
-        stats["False Positive"]=[]
-        stats["Rank Misplacement"]=[]
-        """
+        
 
         for item in d:
             stats["Absolute Error"].append(d[item]["Absolute Error"])
             stats["Relative Error"].append(d[item]["Relative Error"])
             stats["False Positive"].append(d[item]["False Positive"])
-            stats["Rank Misplacement"].append(abs(d[item]["Exact Rank"]-d[item]["Estimated Rank"])!=0)
+            stats["False Positive %"].append(d[item]["False Positive"])
+            if d[item]["Estimated Rank"]!= "None":
+                stats["Rank Misplacement"].append(abs(d[item]["Exact Rank"]-d[item]["Estimated Rank"])!=0)
 
         
         
         stats["Absolute Error"] = sum(stats["Absolute Error"])/len(stats["Absolute Error"])
         stats["Relative Error"]= sum(stats["Relative Error"])/len(stats["Relative Error"])
-        stats["False Positive"]= sum(stats["False Positive"])
-        stats["Rank Misplacement"]=sum(stats["Rank Misplacement"])
+        stats["False Positive"]= sum([1 for i in stats["False Positive"] if i==True])
+        stats["False Positive %"]= 100*sum(stats["False Positive %"])/len(stats["False Positive %"])
+        stats["Rank Misplacement"]=100*sum(stats["Rank Misplacement"])/len([1 for i in d if d[item]["Estimated Rank"]!="None"])
         
         return stats
 
@@ -140,9 +134,11 @@ class sim_run:
             attributes = set(list(stats_ind.get(k,{}).keys()) + list(stats_sha.get(k,{}).keys()))
             for attr in attributes:
                 if "Exact" in attr or "False" in attr:
-                    comparison[k][attr] = str(stats_ind.get(k,{}).get(attr,"")) if stats_ind.get(k,{}).get(attr,"")!="" else str(stats_sha.get(k,{}).get(attr,"")) 
                     if "Frequency" in attr:
+                        comparison[k][attr] = str(round(stats_ind.get(k,{}).get(attr,""),3)) if stats_ind.get(k,{}).get(attr,"")!="" else str(round(stats_sha.get(k,{}).get(attr,""),3)) 
                         comparison[k][attr] = comparison[k][attr] + "%"
+                    else:
+                        comparison[k][attr] = str(stats_ind.get(k,{}).get(attr,"")) if stats_ind.get(k,{}).get(attr,"")!="" else str(stats_sha.get(k,{}).get(attr,"")) 
                 else:
                     value_1=stats_ind.get(k,{}).get(attr,"None")
                     str_value_1 = value_1 if value_1 =="None" else str(round(value_1,3) )
@@ -174,12 +170,12 @@ class sim_run:
         attributes = ["Symbol","Exact Frequency", "Exact Rank", "Estimated Frequency", "Estimated Rank", "False Positive", "Absolute Error", "Relative Error"]
         for k in comparison.keys():
             row=[k]
-            #attributes=list(d.get(k).keys())
+            
             for attr in attributes[1:]:
                 row.append(comparison.get(k,{}).get(attr,""))
             table.append(row)
 
-        #attributes= ["Symbol"] + attributes
+    
         table.sort(key=lambda x: int(x[2]))
         t = tabulate(table,headers=attributes)
         desc = "\nIndividual Deltas / Shared Delta\n"
@@ -190,7 +186,17 @@ class Full_Simulation:
     """
     Class that entails the full simulation, for every size, epsilon and threshold values.
     """
-    def __init__(self,input_sizes, thresholds, epsilons, generate):
+    def __init__(self,input_sizes: list, thresholds: list, epsilons: list, generate: bool):
+        """
+        Initializes the main simulation class, which will be used to test both versions of the lossy counting algorithm
+        in a wide variety of settings.
+
+        Args:
+            input_sizes (list): List of input sizes to be tested.
+            thresholds (list): List of thresholds to be tested.
+            epsilons (list): List of epsilon values to be tested.
+            generate (bool): True if the user wishes to generate random chains, False if they've already been generated.
+        """
         self.input_sizes=input_sizes
         if generate:
             self.generate_chains()
@@ -200,7 +206,10 @@ class Full_Simulation:
         self.run_simulation()
 
 
-    def run_simulation(self):
+    def run_simulation(self)->None:
+        """
+        Runs the simulations for all epsilons selected, and then plots some relevant stats.
+        """
         errors_eps_ind={}
         errors_eps_sha={}
         for eps in self.epsilons:
@@ -213,32 +222,77 @@ class Full_Simulation:
         
         self.all_plots(errors_eps_ind,errors_eps_sha)
     
-    
-    def get_plottable_stats(self,errors_ind,errors_sha, attribute):
+    def plot_bucket_size_var(self)->None:
+        """
+        Plot the changes in the bucket size depending on the epsilon chosen.
+        """
+        eps_buck = {eps:ceil(1/eps) for eps in self.epsilons}
+        plt.plot(eps_buck.keys(),eps_buck.values(),label="Individual Deltas")
+        plt.title("Bucket size and epsilon")
+        plt.legend(loc="upper left")
+        plt.xlabel("epsilon")
+        plt.ylabel("Number of counters")
+        plt.show()
+
+    def get_plottable_stats(self,errors_ind:dict,errors_sha:dict, attribute:str)->(dict,dict):
+        """
+        Gets 2 dictionaries containing lots of information regarding stats of both versions of lossy counting's 
+        performance, and returns 2 simpler dictionaries containing only data regarding a certain attribute.
+
+        Args:
+            
+            errors_ind (dict): Dictionary containing performance data regarding individual deltas version.
+            errors_sha (dict): Dictionary containing performance data regarding shared delta version.
+            attribute (str): String implying which attribute to return data from.
+
+        Returns:
+            dict,dict: One dictionary for each version containing data regarding only the selected attribute.
+        """
         plottable_ind={}
         plottable_sha={}
         for eps in errors_ind:
             plottable_ind[eps] = errors_ind[eps][attribute]
         for eps in errors_sha:
             plottable_sha[eps] = errors_sha[eps][attribute]
-        print(plottable_ind)
-        print(plottable_sha)
+        
         return plottable_ind,plottable_sha
     
-    def plot_stats(self,ind_stats,sha_stats, attribute):
+    def plot_stats(self,ind_stats:dict,sha_stats:dict, attribute:str)->None:
+        """
+        Given information from both versions of lossy counting, and a certain attribute, it plots the information
+        regarding that attribute for both versions.
+
+        Args:
+            ind_stats (dict): Metrics regarding individual deltas version.
+            sha_stats (dict): Metrics regarding shared delta version.
+            attribute (str): Attribute to be plotted.
+        """
+        title="Changes in " + attribute + " by increasing Epsilon"
         plt.plot(ind_stats.keys(),ind_stats.values(),label="Individual Deltas")
         plt.plot(sha_stats.keys(),sha_stats.values(),label="Shared Delta")
-        plt.title(attribute)
+        plt.title(title)
         plt.legend(loc="upper left")
         plt.xlabel("epsilon")
+        if attribute!="False Positive":
+            plt.ylabel("percentage")
+        else:
+            plt.ylabel("items")
         plt.show()
 
-    def all_plots(self,ind_stats, sha_stats):
-        attributes = ["Absolute Error", "Relative Error", "False Positive", "Rank Misplacement"]
+    def all_plots(self,ind_stats:dict, sha_stats:dict)->None:
+        """
+        Auxiliarty method to plot all the desired stats.
+
+        Args:
+            ind_stats (dict): Stats regarding individual deltas version.
+            sha_stats (dict): Stats regarding shared delta version.
+        """
+        attributes = ["Absolute Error", "Relative Error","False Positive %", "False Positive", "Rank Misplacement"]
         for att in attributes:
             ind,sha = self.get_plottable_stats(ind_stats, sha_stats,att)
             
-            self.plot_stats(ind, sha, att)    
+            self.plot_stats(ind, sha, att) 
+        self.plot_bucket_size_var()   
     
     
     
@@ -283,7 +337,7 @@ class Full_Simulation:
         with open("../test_data/stats_eps_" + str(eps) + ".txt","w",encoding="utf-8") as f:
             total_error_ind=initialize_error_dict()
             total_error_sha=initialize_error_dict()
-            f.write("File containing statistics for chains of various sizes and using various thresholds with constant epsilon " + str(eps) + "\nTotal average stats are at the bottom\n\n")
+            f.write("File containing statistics for chains of various sizes and using various thresholds with constant epsilon " + str(eps*100) + "%\nTotal average stats are at the bottom\n\n")
             for size in self.input_sizes:
                 f.write("######################################################################## For chains of size " + str(size) + " ########################################################################\n")
                 relevant_chains = self.get_relevant_chains(size)
@@ -294,10 +348,10 @@ class Full_Simulation:
                     local_error_sha=initialize_error_dict()
                     chain_stats = self.get_chain_stats(chain)
                     f.write(chain_stats + "\n\n")
-                    s = sim_run(chain,eps)
+                    s = Simple_Simulation(chain,eps)
                     for threshold in self.thresholds:
                         if threshold >=eps:
-                            f.write("For threshold " + str(threshold) + "\n")
+                            f.write("For threshold " + str(threshold*100) + "%\n")
                             f.write(s.compare_versions_table(threshold) + "\n")
                             error_ind,error_sha = s.get_error_stats(threshold)
                             if error_ind!=None:
@@ -309,7 +363,7 @@ class Full_Simulation:
                                     local_error_sha[k].append(error_sha[k])
                                     total_error_sha[k].append(error_sha[k])
                         else :
-                            f.write("Epsilon value " + str(eps) + " is higher than threshold " + str(threshold) + " no output generated.\n")
+                            f.write("Epsilon value " + str(eps*100) + "%" + " is higher than threshold " + str(threshold*100) + "%" + " no output generated.\n")
                     local_error_ind=average_error_stats(local_error_ind)                    
                     local_error_sha=average_error_stats(local_error_sha)
                     average_table = average_error_to_table(local_error_ind,local_error_sha)
@@ -320,7 +374,7 @@ class Full_Simulation:
             total_error_ind=average_error_stats(total_error_ind)                    
             total_error_sha=average_error_stats(total_error_sha)
             average_table = average_error_to_table(total_error_ind,total_error_sha)
-            f.write("Average Errors for eps " + str(eps) + "\n")
+            f.write("Average Errors for eps " + str(eps*100) + "%\n")
             f.write(average_table + "\n")
             
 
