@@ -1,36 +1,36 @@
-y y z z x y z x y x y x z x x y y x z y z x y z y x y x z z x y y x z y z y y y z y y y y z x y z z y z y z y z y z x z x y z x y y z x z x x z x z z z y y y z y x z y z y z z z y z x x z y z z z x y y z x x z x z y x z z z y x z x z x x z x z y x x y z x x x y x x y y y z y z y y y z x x z x y z x x z x z x x z x z z y x y z x z x x x z z z x x z x y z z y x z z y x y z z z y z y y y x x z y x x x x z y y z z x x y y x x x x z y y z z x y x x x y x z z z z x y z y y x x y z y z z x z z z z z x z y z y x x y z x y y y z y z x x x z y x z x y z y z y x x y z z z x x z x y z z x z y y x z y x z y y x x y x y x x x x y x z x y z x x x z z y y y x y x x x z z z z z z y z y z y x y z y z y z x y x y x x y x z x x x y x y y z y y z x z z y z y y x y x z x x x z x x z x y x y y y x x x z z y z x y z z y x z y z x y x z y x y y y z x z y y x z z z z z z y x z z x z z y x z x z x y x y z z y y x z y x z x z z z y y y x y z x x z y z x y y y x x x z y y x x x y x x y z z y z y z z z x z z z y z t u e a t m l e o u k u c a i o e o a a p b t u r a o i w x v a t a f t e k q j p g n i u d d a w t a u y v d j y l e i h j e d e n i e a l d d o w a g v s o o u n c i s o n z a a o i u w u i p v g w a u b z g f e i o t j o i z o g y x u n x q i q y h f e j y i b p o o x i q d u e m g d u e i e l x t d e t w p p e i o a c i e u i h a r i i y i e i u n e a e c c q r t o g u i u a y r w o b a u a e l e o e i d u e o b d a u m o v s i w a r o v d o a a o d u i o x b o e i y p i t i a n r v e j a a i o p h z e u j d u u y i m a u k u o x q e c e z f e a h o t p m s o e q a i b a o r x e g e p u u u i w j a k n b u e o l u a t h u r u e i o p z w n w i u o f d o j a u i s a e a i l a a s y d g b y f v e a i f o i o j m a u e o l k e x i i o q f k e p u s e s a a i t o k i a u m j b e t v i t w u r a u l i r v a l i e e i g a p i o n y z q g u u u z u o i r u l v i i g g o p e u w a c k u a a h p t l b m o u v u e r e r i v a e i q r i a c o o y c l l q e i u b g i o h w u g u q i g n c k h 
+z x y z y x y y z y z z x x x x z y z z z x y y y y z z x z z x z y x x x x z x y x x x z y x z z z z z y z y z y x x x z z y z y y y z y y x y y z y y x y x x z x y z x y y y y z x y z z x y x y y y z y z x x z y y y x z y x x z x y z z z z x z y y x y x y y x z y y x y x z z y x x z x z x y z z y y y z x x z y x x y z y z z x x z x y y z z x y y y z x z z y z x y x y y x y y z x y x y x z z z x z x y z y x y x y z y x y z y y x z x x x y z z y z y z x z y x x x z x x x x z z y x x z y z z z z x x x z z y y x x x x y x z z z x x x x y z x z z z x y x x x z x x x x z x y z x x x y x z x z y y x x y z y x z z x y z y x y x y y z z z x y x z x z z z z x z y y z z z y y z y z x x y x z x z z z y z x z z z z x y z x z x x z y z z y z x y z y y x z y z z y z x z y x y y z y z x x x x y x x y y z x x x z x z x z y y x x x x x x z z x y x x z z y y z x y y z x y y x z z z y z z y x y x x z y x z z x z x y y y z x z z z y z x z y y z z z x y x z y y y y y y y y x z y x z y y x x x z y x z y x p u o u a z g e r b i r u q c o u e e i i g s e s o v o e e j u o q z y c o j i u u i e p o e a a i e g o r v o i q o i u e h i u i y o i k r k q v f u i o y n o u o u c a o h u u n w a v u u a h s a u z b e m f r n e f u b e n z a u a u v a u z z i e e l v e a r u d x n k n e p v q r a u m u u u d o d u w o k t u p o e o o a h o c u m e i y e h k a f f g f d m j t f y u u s a o e v a e i u y e t o o d k p b o u i i b p i i u a u i b b a h a d y x r e t u q o i q o g t l e l e o z i z k h p d l h k u o r i i i o a p a o u q t r o t j u q l v w e s m a o o x a s o r o u u a j k o p i a e i x o i c u u d o q d v e t a u u g v l k p u x h r g a i o b d k a i i s m g v a h w p o v u w a r d a p g d o w e z o x u d p w o g u o e a t a e p i i q x a e r o e a o o z n s a x j o l e k u w u e a d c r u m e o d w u i e e s u b k m i u i e m u o o l a o u o s i e a e l a a e i e i w o u x e i p s i h d f g a o s b y a h a c b p j o q i u m j k e a y e g k e o a u l a a o n b q o t n a a x q z z 
 
 Source String:xyz + aaaaabcdeeeeefghiiiiijklmnooooopqrstuuuuuvwxyz
 N:1000
-Exact Counts:{'y': 170, 'z': 186, 'x': 174, 't': 17, 'u': 52, 'e': 48, 'a': 51, 'm': 8, 'l': 14, 'o': 46, 'k': 9, 'c': 10, 'i': 56, 'p': 15, 'b': 12, 'r': 14, 'w': 14, 'v': 13, 'f': 8, 'q': 12, 'j': 11, 'g': 16, 'n': 11, 'd': 16, 'h': 9, 's': 8}
-Exact Ranks:{'z': 1, 'x': 2, 'y': 3, 'i': 4, 'u': 5, 'a': 6, 'e': 7, 'o': 8, 't': 9, 'd': 10, 'g': 11, 'p': 12, 'l': 13, 'r': 14, 'w': 15, 'v': 16, 'b': 17, 'q': 18, 'j': 19, 'n': 20, 'c': 21, 'h': 22, 'k': 23, 'f': 24, 'm': 25, 's': 26}
+Exact Counts:{'z': 184, 'x': 180, 'y': 167, 'p': 16, 'u': 60, 'o': 60, 'a': 50, 'g': 12, 'e': 48, 'r': 15, 'b': 12, 'i': 42, 'q': 14, 'c': 7, 's': 12, 'v': 13, 'j': 8, 'h': 12, 'k': 15, 'f': 8, 'n': 9, 'w': 10, 'm': 10, 'l': 10, 'd': 16, 't': 10}
+Exact Ranks:{'z': 1, 'x': 2, 'y': 3, 'o': 4, 'u': 5, 'a': 6, 'e': 7, 'i': 8, 'd': 9, 'p': 10, 'k': 11, 'r': 12, 'q': 13, 'v': 14, 'b': 15, 'g': 16, 'h': 17, 's': 18, 'l': 19, 'm': 20, 't': 21, 'w': 22, 'n': 23, 'f': 24, 'j': 25, 'c': 26}
 
 Table:
 Symbol      Exact Occurrences  Exact Frequency      Rank
 --------  -------------------  -----------------  ------
-z                         186  18.6%                   1
-x                         174  17.4%                   2
-y                         170  17.0%                   3
-i                          56  5.6%                    4
-u                          52  5.2%                    5
-a                          51  5.1%                    6
+z                         184  18.4%                   1
+x                         180  18.0%                   2
+y                         167  16.7%                   3
+o                          60  6.0%                    4
+u                          60  6.0%                    5
+a                          50  5.0%                    6
 e                          48  4.8%                    7
-o                          46  4.6%                    8
-t                          17  1.7%                    9
-d                          16  1.6%                   10
-g                          16  1.6%                   11
-p                          15  1.5%                   12
-l                          14  1.4%                   13
-r                          14  1.4%                   14
-w                          14  1.4%                   15
-v                          13  1.3%                   16
-b                          12  1.2%                   17
-q                          12  1.2%                   18
-j                          11  1.1%                   19
-n                          11  1.1%                   20
-c                          10  1.0%                   21
-h                           9  0.9%                   22
-k                           9  0.9%                   23
+i                          42  4.2%                    8
+d                          16  1.6%                    9
+p                          16  1.6%                   10
+k                          15  1.5%                   11
+r                          15  1.5%                   12
+q                          14  1.4%                   13
+v                          13  1.3%                   14
+b                          12  1.2%                   15
+g                          12  1.2%                   16
+h                          12  1.2%                   17
+s                          12  1.2%                   18
+l                          10  1.0%                   19
+m                          10  1.0%                   20
+t                          10  1.0%                   21
+w                          10  1.0%                   22
+n                           9  0.9%                   23
 f                           8  0.8%                   24
-m                           8  0.8%                   25
-s                           8  0.8%                   26
+j                           8  0.8%                   25
+c                           7  0.7%                   26
