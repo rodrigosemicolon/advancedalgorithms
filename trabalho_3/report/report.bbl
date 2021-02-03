@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+
+\bibitem{Manku}
+Gurmeet Singh Manku \&~Rajeev Motwani,
+\newblock ``Approximate frequency counts over data streams'',
+\newblock in {\em International Conference on Very Large Data Bases}, 2002.
+
+\bibitem{Cormode}
+G.~Cormode \&~M. Hadjieleftheriou,
+\newblock ``Finding the frequent items in streams of data'',
+\newblock {\em Commun. ACM}, vol.~52, no.~10, 2009.
+
+\end{thebibliography}
