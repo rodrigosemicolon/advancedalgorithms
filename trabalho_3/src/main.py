@@ -6,7 +6,7 @@ from LossyCounting import lossycounting_id, lossycounting_sd
 LIST_OF_INPUT_SIZES = [100, 1000, 10000, 100000, 1000000, 10000000]
 LIST_OF_THRESHOLDS = [0.03, 0.05, 0.10, 0.15, 0.2]
 LIST_OF_EPSILONS = [0.0001, 0.001, 0.005, 0.01, 0.05, 0.1]
-GENERATE = True
+GENERATE = False
 PREFIX = "../text_files/"
 
 if __name__ == "__main__":
