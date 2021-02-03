@@ -90,24 +90,28 @@ On this paper we will focus only on one counter based algorithm, the solution pr
 
 \subsection{Lossy Counting}
 Lossy counting is one of the counter based algorithms, and as such, the way it works is more intuitive for most people, here's a brief explanation.\par
-The user declares an $\epsilon$, or error threshold, from that, the size of a moving window $k$ is calculated like so: $k=\frac{1}{\epsilon}$.\par
-The program is initialized with $N$ (total number of items seen) as 0, $Bucket\_id$ (id of each window of size $k$ read) as 1, and with $T$ (a data structure to keep track of a subset of items ($item\_name$, $est\_frequency$, $\Delta$)) empty.\par
-From then on, it will start reading the data stream, item by item.\par
-It reads an item $i$, increments $N$ and checks if $i$ is in the $T$ structure, if so, increments its value in $T$ by 1. Otherwise inserts it with 1 as $est\_frequency$ and the current $Bucket\_id - 1$ as $\Delta$.\par
-Then checks if the number of items read "filled" the window of size $k$, if so, for every item $l$ in $T$, if $l\_est\_frequency + l\_\Delta \leq current bucket\_id$, its entry is deleted. Once this is done, the $bucket\_id$ is incremented and the algorithm keeps on reading items.\par
-If a user requests a threshold  frequency $s$, the program will return the entries $j$ in $T$ that satisfy $j\_est\_frequency \geq (s-\epsilon)N$.\par 
-Intestingly, for every entry of $T$, its estimated frequency represents the exact frequency of the item ever since it was inserted to $T$ \cite{Manku}. And the corresponding value of $\Delta$ is the maximum number of times that item could have occurred in the previous buckets/windows, that's why it remains unchanged after being inserted.\par
+\begin{enumerate}
+\item The user declares an $\epsilon$, or error threshold, from that, the size of a moving window $k$ is calculated like so: $k=\lceil\frac{1}{\epsilon}\rceil$.
+\item The program is initialized with $N$ (total number of items seen) as 0, $Bucket\_id$ (id of each window of size $k$ read) as 1, and with $T$ (a data structure to keep track of a subset of items ($item\_name$, $est\_frequency$, $\Delta$)) empty.
+\item It reads an item $i$, increments $N$ and checks if $i$ is in the $T$ structure, if so, increments its value in $T$ by 1. Otherwise inserts it with 1 as $est\_frequency$ and the current $Bucket\_id - 1$ as $\Delta$.
+\item Then checks if the number of items read "filled" the window of size $k$, if so, for every item $l$ in $T$, if $l\_est\_frequency + l\_\Delta \leq current bucket\_id$, its entry is deleted. Once this is done, the $bucket\_id$ is incremented and the algorithm keeps on reading items.
+\item If a user requests a threshold  frequency $s$, the program will return the entries $j$ in $T$ that satisfy $j\_est\_frequency \geq (s-\epsilon)N$.
+\end{enumerate}
+Steps 3-4 are repeated until there are no new items in the data stream, and only then does it pass to step 5.\\
+Intestingly, for every entry of $T$, its estimated frequency represents the exact frequency of the item ever since it was inserted to $T$ \cite{Manku},that's why items that enter the structure early get very accurate results. And the corresponding value of $\Delta$ is the maximum number of times that item could have occurred in the previous buckets/windows, that's why it remains unchanged after being inserted.\\
 Some properties can be derived from the nature of the algorithm \cite{Manku}, namely:
 \begin{itemize}
 \item It can find all items $x$ in a data stream that verify: $true\_frequency(x)>(threshold)N$
 \item The solution will contain no item $y$ such that: $true\_frequency(y)<(threshold-\epsilon)N$
 \item The estimated frequencies are less than the true frequencies by at most $\epsilon N$.
 \end{itemize}
-From these properties we can deduce that there will never be any false negatives (all items that verify the threshold frequency will be returned, as per property 1), but there might be false positives (elements whose estimated frequency is between $treshold-\epsilon)N$ and $N$), elements returned that shouldn't be.\par
+From these properties we can deduce that there will never be any false negatives (all items that verify the threshold frequency will be returned, as per property 1), but there might be false positives (elements whose estimated frequency is between $treshold-\epsilon)N$ and $N$), elements returned that shouldn't be.\\
 Interestingly, 2 versions of this algorithm are available, differing mainly by the fact that in one version, all items in the dictionary contain an individual $\Delta$ (the version explained), and in the other, all items share a common $\Delta$ given by $\Delta(i)=\lfloor{\frac{i}{k}}\rfloor$.
-This other version was also presented by Manku, with the goal of avoiding the cost of storing individual $\Delta$ values.
-Here's this version's pseudocode \cite{Cormode}.
+This other version was also presented by Manku, with the goal of avoiding the cost of storing individual $\Delta$ values.\par From now on, the original version with individual $\Delta$'s will be referred to as $ID$ while the shared $\Delta$ version will be referred to as $SD$.
+Here's $SD$'s pseudocode \cite{Cormode}:
+
 \includegraphics[scale=1]{pseudo.png}
+
 \section{The Method}
 In order to put the previously mentioned algorithms to the test, we had to implement them in Python and create some testing scenarios to get a better idea of their results.
 \subsection{Code}
@@ -165,30 +169,30 @@ We can make some observations from the results.
 \subsection{Unexpected Results}
 At first glance all graphics seem intuitive with results that should be expected, except for the case of drop the total number of false positives.
 \par
-This can be attributed to the fact that for bigger $\epsilon$ values, more tests had to be ignored (following the $s \geq \epsilon$ rule), this in turn gave more weight (less results to average) to tests where the heavy hitters had higher percentages, which means that other items had significantly lower percentages. This suggests that there was a huge difference in the distribution of items, and in this case it makes sense that the distribution was so "unfair" that even a big $\epsilon$ couldn't cause more false positives to be returned.
+This can be attributed to the fact that for bigger $\epsilon$ values, more tests had to be ignored (following the $s \geq \epsilon$ rule), this in turn gave more weight (less results to average) to the remaining tests. Given that the output can still be empty even for valid $\epsilon$ and threshold combinations (when there isn't any item whose estimated frequency satisfies the threshold condition, no "heavy hitters" when it comes to the defined threshold), we end up giving even more weight to test cases where the heavy hitters had much higher frequencies than the other items, due to the smaller amount of total results to average out. This suggests that there was a huge difference in the distribution of items in those cases, so it makes sense that the distribution was so "unfair" that even with a big $\epsilon$, no other items could fit the false positive windows ($true\_frequency > estimated\_frequency \geq (s-\epsilon)N$), resulting in a smaller number of false positives.
 \subsection{Amount of items returned}
 First it's easily noticeable that the $ID$ version of the algorithm returns considerably less items than its $SD$ counterpart, to be more precise, $SD$ returns more false positives.
 This can be seen in the files generated from the tests, but also in the plots. \par
 While both have an increase in false positive percentage, we can see that in raw number of items, $ID$ returns significantly less false positives than $SD$ as $\epsilon$ increases.
 \subsection{Errors}
-As expected, the $ID$ version outperforms the $SD$ version when it comes to errors.
+As expected, the errors grow as we allow a bigger margin for error, resulting in smaller buckets.\par
+The $ID$ version outperforms the $SD$ version when it comes to errors.
 The inability to pinpoint in which bucket an item  entered the structure due to the lack of individual delta values causes the guesses to be way overblown, and as such, the $SD$ version tends to overestimate frequencies more than its $ID$ counterpart.
-////////////// talk errors
+
 \subsection{The Chains}
 From the data in $test\_data$ we can see that the chain's size wasn't that impactful regarding the errors.\par
-///address the 5\% and 10\% for simple source string
 It was expected that when building each chain as a result of the concatenation of various chains with different source strings, the algorithm wouldn't be as accurate, because using only one chain, when there are characters that are very likely to have a high frequency (due to their duplicates on the source string and consequently higher probability) they are very likely to show up in one of the initial buckets, and due to their high frequency, once they enter the structure keeping track of the counts, it's very unlikely that they will leave, thus making its estimate more precise.\par 
 Thus, when using this mixed chain approach it's very likely that that character will have significantly different frequencies for each chain, making the data stream more unpredictable. This, in turn, makes it possible for the character in question to leave the structure keeping track of the counts, which as we know, will cause imprecision later.\par
-This wasn't very present in most of our tests because most of the $\epsilon$'s used resulted in a decently sized window, with the smallest being of size 10 (for $\epsilon=10\%$). For the instance of the alphabet, which only has 26 different items, the number of deletions wasn't very big (comparatively) and thus the errors were around those calculated for instances using  a simple source string for most cases.
-
-////////////check better
-
-/////////check if order mattered
+This wasn't very present in most of our tests because most of the $\epsilon$'s used resulted in a decently sized window, with the smallest being of size 10 (for $\epsilon=10\%$). For the instance of the alphabet, which only has 26 different items, the number of deletions wasn't very big (comparatively) and thus the errors were around those calculated for instances using  a simple source string for most cases.\\
+Additionally, we were asked in this assignment to find if in a random chain with uniform distribution does any letter have a frequency higher than 5\% or 10\%?\\
+To solve this we simply run the lossy counting algorithms on a chain generated from "abcdefghijklmnopqrstuvwxyz" with a small $\epsilon$ value like 0.1\% (0.001 as a float) and the desired 5\% (0.05 float) or 10\% (0.1 float) threshold.
+To briefly answer this, in smaller test cases, some letters did have a frequency higher than 5\%, but as the input size grew, their frequency converged to $\frac{1}{26}$ as expected.
+The chains built from the other source strings generated far more interesting and relevant distributions (in the sense of the "heavy hitters" problem). 
 
 \subsection{Parameters}
 Regarding the parameters themselves, the threshold is obviously chain dependent, depending on the frequencies of the data stream in question, there might be or not items that fulfill the threshold requirement.\par
 The parameter $\epsilon$ however, was generally seen as the most important overall.\par
-A lower $\epsilon$ leads to much smaller errors, as expected, since $bucket=\frac{1}{\epsilon}$, when $\epsilon$ is smaller, the bucket size will be bigger, meaning less possible deletions from the main data structure, which is what causes inaccuracy most of the time.\par
+A lower $\epsilon$ leads to much smaller errors, as expected, since $bucket=\lceil \frac{1}{\epsilon} \rceil$, when $\epsilon$ is smaller, the bucket size will be bigger, meaning less possible deletions from the main data structure, which is what causes inaccuracy most of the time.\par
 Likewise, higher $\epsilon$ will lead to bigger errors, as the bucket size is smaller, there will be more deletions, however there is a silver lining, the structure will have less items at any time as more deletions occur, so it will take up less space (not very meaningful in this case where the size of the max set of possible items is 26, the letters of the alphabet).
 \includegraphics[scale=0.5]{bucket size.png}
 
