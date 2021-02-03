@@ -1,23 +1,20 @@
-
 from Simulation import Full_Simulation, Simple_Simulation
 from CharChain import char_chain
-from LossyCounting import lossycounting_id,lossycounting_sd
+from LossyCounting import lossycounting_id, lossycounting_sd
 
 
-LIST_OF_INPUT_SIZES=[100,1000,10000,100000,1000000,10000000]
-N_PER_SIZE=2
-LIST_OF_THRESHOLDS=[0.03,0.05,0.10,0.15,0.2]
-LIST_OF_EPSILONS=[0.0001,0.001,0.005,0.01,0.05,0.1]
-GENERATE=False
+LIST_OF_INPUT_SIZES = [100, 1000, 10000, 100000, 1000000, 10000000]
+LIST_OF_THRESHOLDS = [0.03, 0.05, 0.10, 0.15, 0.2]
+LIST_OF_EPSILONS = [0.0001, 0.001, 0.005, 0.01, 0.05, 0.1]
+GENERATE = True
 PREFIX = "../text_files/"
 
-if __name__=="__main__":
-    
-    
-    fs = Full_Simulation(LIST_OF_INPUT_SIZES,LIST_OF_THRESHOLDS,LIST_OF_EPSILONS, GENERATE)
-    
-    
-    
+if __name__ == "__main__":
+
+    fs = Full_Simulation(
+        LIST_OF_INPUT_SIZES, LIST_OF_THRESHOLDS, LIST_OF_EPSILONS, GENERATE
+    )
+
     """
     #BASIC EXAMPLE OF SIMPLE OPERATIONS WITH CHAINS AND LOSSY COUNTING ALGORITHMS
     test_source="abcdeee"
@@ -37,5 +34,3 @@ if __name__=="__main__":
     ss = Simple_Simulation(target_path,test_epsilon)
     print(ss.compare_versions_table(test_threshold))
     """
-
-    
