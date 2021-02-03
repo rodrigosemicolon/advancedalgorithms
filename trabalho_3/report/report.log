@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.6)  3 FEB 2021 10:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.6)  3 FEB 2021 14:30
 entering extended mode
 **./report.tex
 (report.tex
@@ -151,115 +151,118 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 <pseudo.png, id=19, 181.27725pt x 163.812pt>
 File: pseudo.png Graphic file (type png)
 <use pseudo.png>
-Package pdftex.def Info: pseudo.png  used on input line 113.
+Package pdftex.def Info: pseudo.png  used on input line 117.
 (pdftex.def)             Requested size: 181.27681pt x 163.81158pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 1259) in paragraph at lines 121--122
+Underfull \hbox (badness 1259) in paragraph at lines 125--126
 []\OT1/cmr/m/n/10 The file re-spon-si-ble for re-sults is $\OML/cmm/m/it/10 Sim
 ulation:py$
  []
 
 [2 <./pseudo.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 []\OT1/cmr/m/n/10 One with the first half gen-er-ated from
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 \OT1/cmr/m/n/10 "aaaaabcdeeeeefghi-i-i-i-ijklm-nooooopqrstu-u-u-u-u-
  []
 
 <absolute.png, id=25, 462.528pt x 346.896pt>
 File: absolute.png Graphic file (type png)
 <use absolute.png>
-Package pdftex.def Info: absolute.png  used on input line 161.
+Package pdftex.def Info: absolute.png  used on input line 165.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 <relative.png, id=26, 462.528pt x 346.896pt>
 File: relative.png Graphic file (type png)
 <use relative.png>
-Package pdftex.def Info: relative.png  used on input line 162.
+Package pdftex.def Info: relative.png  used on input line 166.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 <false positive percent.png, id=27, 462.528pt x 346.896pt>
 File: false positive percent.png Graphic file (type png)
 <use false positive percent.png>
-Package pdftex.def Info: false positive percent.png  used on input line 163.
+Package pdftex.def Info: false positive percent.png  used on input line 167.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 <false positive.png, id=28, 462.528pt x 346.896pt>
 File: false positive.png Graphic file (type png)
 <use false positive.png>
-Package pdftex.def Info: false positive.png  used on input line 164.
+Package pdftex.def Info: false positive.png  used on input line 168.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 <rank misplacement.png, id=29, 462.528pt x 346.896pt>
 File: rank misplacement.png Graphic file (type png)
 <use rank misplacement.png>
-Package pdftex.def Info: rank misplacement.png  used on input line 165.
+Package pdftex.def Info: rank misplacement.png  used on input line 169.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--166
+Underfull \hbox (badness 10000) in paragraph at lines 164--170
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--166
+Underfull \hbox (badness 10000) in paragraph at lines 164--170
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--166
+Underfull \hbox (badness 10000) in paragraph at lines 164--170
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--166
+Underfull \hbox (badness 10000) in paragraph at lines 164--170
 []
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3 <./absolute.png> <./relative.png>]
-Underfull \hbox (badness 1558) in paragraph at lines 186--191
+ [3 <./absolute.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <./relative.png> <./false positive percent.png> <./false positive.png> <./r
+ank misplacement.png>]
+Underfull \hbox (badness 1558) in paragraph at lines 194--198
 \OT1/cmr/m/n/10 To solve this we sim-ply run the lossy count-ing
  []
 
-[4 <./false positive percent.png> <./false positive.png> <./rank misplacement.p
-ng>]
 <bucket size.png, id=41, 462.528pt x 346.896pt>
 File: bucket size.png Graphic file (type png)
 <use bucket size.png>
-Package pdftex.def Info: bucket size.png  used on input line 197.
+Package pdftex.def Info: bucket size.png  used on input line 204.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
- (report.bbl) [5 <./bucket size.png>] (report.aux) ) 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+(report.bbl) [5 <./bucket size.png>] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 2222 strings out of 479799
- 33339 string characters out of 2869723
- 332257 words of memory out of 3000000
- 19213 multiletter control sequences out of 15000+200000
+ 2221 strings out of 479799
+ 33331 string characters out of 2869723
+ 333257 words of memory out of 3000000
+ 19212 multiletter control sequences out of 15000+200000
  540394 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,7n,73p,1021b,239s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/rodri/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/rodri/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/
-rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
-><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mcsc10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmmi10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmmi7.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/rodri/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/rodri/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/rodri/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/rodr
-i/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/U
-sers/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.p
-fb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmti10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmti8.pfb>
-Output written on report.pdf (5 pages, 363864 bytes).
+ 66i,7n,73p,708b,239s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/rodri/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/rodri/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/r
+odri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
+<C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+csc10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmmi10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmmi7.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmr10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/rodri/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/rodri/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/rodri/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/rodri
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Us
+ers/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pf
+b><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmti10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmti8.pfb>
+Output written on report.pdf (5 pages, 364839 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
